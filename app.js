@@ -10,7 +10,9 @@ const logger = require('morgan');
 const path = require('path');
 
 mongoose
-  .connect('mongodb://localhost/meetyourfood', { useNewUrlParser: true })
+  .connect('mongodb://localhost/meetyourfood', {
+    useNewUrlParser: true
+  })
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -30,7 +32,9 @@ const app = express();
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 
 // Express View engine setup
@@ -53,6 +57,9 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 const index = require('./routes/index');
 app.use('/', index);
+
+const auth = require('./routes/auth.route');
+app.use('/', auth);
 
 // const resultats = require('./routes/resultat-recherche');
 // app.use('/', resultats);

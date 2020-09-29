@@ -8,7 +8,10 @@
     <label>Lastname *<input type='text' name="lastName"></label>
     <label>Username *<input type='text' name="userName"></label>
     <label>Email *<input type='email' name="email"></label>
-    <label>Password *<input type='password' name="password"></label>
+    <label>Password *<input type='password' name="password" placeholder="**********"></label>
+    <label>Profile picture<input type="file" name="profilePic" /></label>
+
+    
   </div>
   <div id='host-form'>
     <label>Farm name *<input type='text' name="farmName"></label>
@@ -97,3 +100,7 @@
   </div>
   <button>Submit</button>
 </form>
+
+{{#if errorMessage}}
+<p>{{errorMessage}}</p>
+{{/if}}

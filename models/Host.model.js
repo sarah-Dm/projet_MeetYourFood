@@ -56,7 +56,8 @@ const hostSchema = new Schema({
   description: {
     type: String,
     required: true,
-  },
+  }, 
+  website: String, 
   openingDays: {
     type: [String],
     enum: [

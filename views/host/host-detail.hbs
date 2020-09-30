@@ -1,0 +1,20 @@
+<a href="/hosts">Back to list</a>
+<img src="{{host.photos}}">
+{{!-- A FAIRE LES REVIEWS : --}}
+<p>CITY : {{host.city}} - {{host.country}}</p>
+<p>FARM Title : {{host.farmName}}</p>
+<p>ADDRESS :{{host.address}}
+  {{host.zipCode}} - {{host.city}}
+</p>
+{{!-- A FAIRE LE AVERAGE CART :--}}
+<a href="mailto:{{user.email}}">Contact your host</a>
+<div>
+  <p>Type of farm : {{host.farmType}}</p>
+  <p>Certifications : {{host.certifications}}</p>
+  <p>Type of activities : {{host.activitiesType}}</p>
+  <p>Public : {{host.public}}</p>
+  <p>Opening days : {{host.openingDays}}</p>
+  <p>Opening hours : {{host.openingHours}}</p>
+</div>
+<p>HOST : {{user.firstName}} {{user.lastName}}</p>
+<p>{{host.description}}</p>

@@ -1,0 +1,6 @@
+<h2>Welcome, {{ user.firstName }} {{ user.lastName }}</h2>
+<form action='edit-visitor/{{user.id}}' method="POST"><label><input type="email" value="{{user.email}}"
+      name="email"></label>
+  <label><input type="password" value="{{user.password}}" name="password"></label>
+  <button>Edit</button>
+</form><a href="/user/{{user.id}}/delete">Delete</a>

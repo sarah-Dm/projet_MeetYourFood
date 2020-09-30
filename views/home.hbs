@@ -1,118 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MeetYourFood</title>
- <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="../stylesheets/style.css" />
-  </head>
-  <body>
-    <header class="header-home">
-        <nav id="barre-d-accueil">
-            <a href="/"><img src="#" alt="logo" /></a>
-            <ul>
-              <li><a class="boutons_hover" href="/product_hote"> Devenir product'hôte</a></li>
-              <li><a class="boutons_hover" href="#"> Langues</a></li>
-              <li id="mon_compte" class="boutons_hover">
-                  <i class="fas fa-user-circle"></i>
-                  <a href="/mon_compte"> Mon compte</a></li>
-            </ul>
-        </nav>
-      {{!-- FORMULAIRE DE RECHERCHE --}}
-        <section id="page_accueil">
-            <form id="formulaire-recherche" action=""> <!--à supprimer quand view mobile avec le .js-->
-                <section class="section_hover" id="demande_lieu">
-                    <label for="">Lieu</label>
-                    <input type="text" placeholder="Où allez-vous ?">
-                </section>
-                <div class="separateur_vertical"></div>
-                <section class="section_hover" id="demande_date_arrivee">
-                    <label for="">Arrivée</label>
-                    <input type="date" placeholder="Ajouter des dates">
-                </section>
-                <div class="separateur_vertical"></div>
-                <section class="section_hover" id="demande_date_depart">
-                    <label for="">Départ</label>
-                    <input type="date" placeholder="Ajouter des dates">
-                </section>
-                <div class="separateur_vertical"></div>
-                <section class="section_hover" id="demande_visiteurs">
-                    <label for="" >Visiteurs</label>
-                    <input type="text" placeholder="Ajouter des visiteurs">
-                </section>
-                <section id="loupe_recherche">
-                    <img id="loupe-icon" src="../images/loupe-icon.png" alt="loupe">
-                </section>
-            </form>
-            {{!-- mobile view--}}
-            <form id="formulaire-recherche-mobile" action=""> <!--à supprimer quand view normale avec le .js-->
-                <img id="loupe-icon-mobile" src="../images/loupe-icon.png" alt="loupe">
-                <label for="" ></label>
-                <input type="text" placeholder="Où allez-vous ?">
-            </form>
-            {{!-- SLOGAN --}}
-            <section id="slogan">
-                <h1>Allez à la rencontre </h1>
-                <h1>de votre assiette</h1>
-                <p>Aventurez vous dans les coulisses de votre alimentation</p>
-            </section>
-            {{!--EXEMPLES--}}
-            {{!-- A L'AFFICHE --}}
-        </section>
-    </header>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MeetYourFood</title>
+  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/style.css" />
+</head>
 
-    <footer id="footer-layout">
-      <ul id="sommaire">
-        <ul>
-          <li>A PROPOS</li>
-          <li><a href="#">Fonctionnement</a></li>
-          <li><a href="#">Carrière</a></li>
-        </ul>
-        <ul>
-          <li>COMMUNAUTE</li>
-          <li><a href="#">Partenariat</a></li>
-          <li><a href="#">Inviter des amis</a></li>
-        </ul>
-        <ul>
-          <li>HOTE</li>
-          <li><a href="#">Accueillir des visiteurs</a></li>
-          <li><a href="#">Inviter des amis</a></li>
-        </ul>
-        <ul>
-          <li>ASSISTANCE</li>
-          <li><a href="#">Centre d'aide</a></li>
-          <li><a href="#">Options d'annulation</a></li>
-        </ul>
+<body>
+  <header class="header-home">
+    <div id="logo"><a href="/">MeetYourFood 🥕</a></div>
+    <nav>
+      <ul id="links">
+        <li><a class="boutons_hover" href="/hosts">Meet our hosts</a></li>
+        <li><a class="boutons_hover" href="/create-account?host=1">Become a host</a></li>
       </ul>
-      <hr>
-      <section id="bottom_footer">
-        <p>©2020 MeetYourFood, Inc. All rights reserved</p>
-        <ul id="liens">
-          <li>Confidentialité</li>
-          <li>Termes</li>
-          <li>Plan de site</li>
+      <div id="account-block">
+        <ul id="mon_compte">
+          <i class="far fa-user-circle"></i>
+          <div id="account-links">
+            <li><a href="/login">Login</a></li>
+            <li id="create-account"><a href="/create-account">Create an account</a></li>
+          </div>
         </ul>
-        <ul>
-          <li>[langue de la page]</li>
-          <!--langage of the page-->
-          <li>[devise de la page]</li>
-          <!--currency of the page-->
-        </ul>
-        <ul id="liens_reseaux">
-          <li>
-            <a href="#"><i class="fab fa-facebook"></i> </a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-twitter-square"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </li> 
-        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <body class="homepage"> {{!-- FORMULAIRE DE RECHERCHE --}}
+    <section id="page_accueil">
+      <form id="formulaire-recherche" action="">
+        <!--à supprimer quand view mobile avec le .js-->
+        <section class="section_hover" id="demande_lieu">
+          <label for="">Lieu</label>
+          <input type="text" placeholder="Où allez-vous ?">
+        </section>
+        <div class="separateur_vertical"></div>
+        <section class="section_hover" id="demande_date_arrivee">
+          <label for="">Arrivée</label>
+          <input type="date" placeholder="Ajouter des dates">
+        </section>
+        <div class="separateur_vertical"></div>
+        <section class="section_hover" id="demande_date_depart">
+          <label for="">Départ</label>
+          <input type="date" placeholder="Ajouter des dates">
+        </section>
+        <div class="separateur_vertical"></div>
+        <section class="section_hover" id="demande_visiteurs">
+          <label for="">Visiteurs</label>
+          <input type="text" placeholder="Ajouter des visiteurs">
+        </section>
+        <section id="loupe_recherche">
+          <img id="loupe-icon" src="../images/loupe-icon.png" alt="loupe">
+        </section>
+      </form>
+      {{!-- mobile view--}}
+      <form id="formulaire-recherche-mobile" action="">
+        <!--à supprimer quand view normale avec le .js-->
+        <img id="loupe-icon-mobile" src="../images/loupe-icon.png" alt="loupe">
+        <label for=""></label>
+        <input type="text" placeholder="Où allez-vous ?">
+      </form>
+      {{!-- SLOGAN --}}
+      <section id="slogan">
+        <h1>Allez à la rencontre </h1>
+        <h1>de votre assiette</h1>
+        <p>Aventurez vous dans les coulisses de votre alimentation</p>
       </section>
-    </footer>
+      {{!--EXEMPLES--}}
+      {{!-- A L'AFFICHE --}}
+    </section>
   </body>
+
+  <footer id="footer-layout">
+    <ul id="sommaire">
+      <ul>
+        <li>A PROPOS</li>
+        <li><a href="#">Fonctionnement</a></li>
+        <li><a href="#">Carrière</a></li>
+      </ul>
+      <ul>
+        <li>COMMUNAUTE</li>
+        <li><a href="#">Partenariat</a></li>
+        <li><a href="#">Inviter des amis</a></li>
+      </ul>
+      <ul>
+        <li>HOTE</li>
+        <li><a href="#">Accueillir des visiteurs</a></li>
+        <li><a href="#">Inviter des amis</a></li>
+      </ul>
+      <ul>
+        <li>ASSISTANCE</li>
+        <li><a href="#">Centre d'aide</a></li>
+        <li><a href="#">Options d'annulation</a></li>
+      </ul>
+    </ul>
+    <hr>
+    <section id="bottom_footer">
+      <p>©2020 MeetYourFood, Inc. All rights reserved</p>
+      <ul id="liens">
+        <li>Confidentialité</li>
+        <li>Termes</li>
+        <li>Plan de site</li>
+      </ul>
+      <ul>
+        <li>[langue de la page]</li>
+        <!--langage of the page-->
+        <li>[devise de la page]</li>
+        <!--currency of the page-->
+      </ul>
+      <ul id="liens_reseaux">
+        <li>
+          <a href="#"><i class="fab fa-facebook"></i> </a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-twitter-square"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </li>
+      </ul>
+    </section>
+  </footer>
+</body>
+
 </html>

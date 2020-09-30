@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const hostSchema = new Schema({
-  userId: [{
+  userId: {
     type: Schema.Types.ObjectId,
     ref: "User",
-  }, ], //aller chercher les infos du User
+  }, //aller chercher les infos du User
   farmName: {
     type: String,
     required: true,
@@ -56,8 +56,8 @@ const hostSchema = new Schema({
   description: {
     type: String,
     required: true,
-  }, 
-  website: String, 
+  },
+  website: String,
   openingDays: {
     type: [String],
     enum: [

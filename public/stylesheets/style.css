@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;700&display=swap");
 * {
   padding: 0px;
   margin: 0px;
@@ -7,20 +7,38 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-size: 15px;
-  font-family: 'Barlow', sans-serif; }
+  font-size: 18px;
+  font-family: 'Barlow', sans-serif;
+  min-height: 100vh; }
 
 .homepage {
   background: url("https://res.cloudinary.com/nina3am/image/upload/v1601452001/meet-your-food/466658-PFX5MG-6_m3ynfh.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
 
+/*
+##     ## ########    ###    ########  ######## ########  
+##     ## ##         ## ##   ##     ## ##       ##     ## 
+##     ## ##        ##   ##  ##     ## ##       ##     ## 
+######### ######   ##     ## ##     ## ######   ########  
+##     ## ##       ######### ##     ## ##       ##   ##   
+##     ## ##       ##     ## ##     ## ##       ##    ##  
+##     ## ######## ##     ## ########  ######## ##     ## 
+*/
 .header-layout a,
 .header-home a {
   text-decoration: none;
   color: black; }
+
+.header-layout h1,
+.header-home h1 {
+  font-weight: 400; }
 
 .header-layout,
 .header-home {
@@ -70,8 +88,10 @@ body {
 
 .fa,
 .far,
-.fas {
-  font-size: 40px; }
+.fas,
+.fab {
+  font-size: 40px;
+  color: black; }
 
 .header-layout #account-links li,
 .header-home #account-links li {
@@ -88,5 +108,177 @@ body {
   align-items: center;
   margin: 10px 20px;
   text-align: center; }
+
+@media (max-width: 768px) {
+  .header-home nav {
+    visibility: hidden; }
+  .header-layout nav {
+    visibility: hidden; } }
+
+#page_accueil {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 150px; }
+
+#slogan {
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+
+#slogan h2 {
+  font-size: 3em;
+  font-weight: 200; }
+
+#slogan p {
+  font-size: 1.5em;
+  font-weight: 200; }
+
+#formulaire-recherche-mobile {
+  visibility: hidden;
+  height: 0px; }
+
+#formulaire-recherche {
+  background: #F2F2F2;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: 65px;
+  width: 70%;
+  border-radius: 100px;
+  display: flex;
+  height: 150px; }
+
+#loupe_recherche {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  background-color: #F2994A;
+  height: 100%;
+  border-radius: 100px; }
+
+#loupe-icon {
+  height: 40%;
+  margin: auto; }
+
+.form-field {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 20px; }
+
+.form-field label {
+  display: flex;
+  flex-direction: column-reverse;
+  font-weight: 700; }
+
+.form-field input,
+select {
+  margin-bottom: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+  background-color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  color: grey; }
+
+#fields {
+  display: flex;
+  height: fit-content;
+  margin: auto auto 10px auto;
+  justify-content: space-evenly;
+  width: 80%; }
+
+#demande_lieu {
+  width: 40%; }
+
+/*
+########  #######   #######  ######## ######## ########  
+##       ##     ## ##     ##    ##    ##       ##     ## 
+##       ##     ## ##     ##    ##    ##       ##     ## 
+######   ##     ## ##     ##    ##    ######   ########  
+##       ##     ## ##     ##    ##    ##       ##   ##   
+##       ##     ## ##     ##    ##    ##       ##    ##  
+##        #######   #######     ##    ######## ##     ## 
+*/
+/* footer sommaire */
+#footer-layout ul {
+  padding-left: 0px;
+  justify-content: space-between;
+  list-style-type: none;
+  text-align: center; }
+
+#footer-layout #sommaire ul {
+  flex-direction: column;
+  padding-left: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+#footer-layout #sommaire ul li {
+  margin: 4px;
+  font-weight: 800; }
+
+#footer-layout #sommaire ul li :nth-child(1) {
+  font-weight: 200; }
+
+/* bottom footer */
+#footer-layout {
+  background: #F2F2F2;
+  padding-left: 45px;
+  padding-right: 45px; }
+
+#sommaire a {
+  text-decoration: none;
+  color: black; }
+
+#footer-layout #sommaire,
+#footer-layout #bottom_footer {
+  display: flex;
+  justify-content: space-evenly; }
+
+@media (max-width: 375px) {
+  #footer-layout #sommaire,
+  #footer-layout #bottom_footer {
+    padding: 10px 20px; } }
+
+#footer-layout #bottom_footer {
+  display: flex;
+  align-items: center; }
+
+@media (max-width: 740px) {
+  #footer-layout #bottom_footer {
+    flex-direction: column;
+    align-items: start; }
+  #footer-layout #bottom_footer > ul {
+    display: flex;
+    flex-direction: row; }
+  #footer-layout #bottom_footer ul li {
+    margin-right: 5px; } }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #footer-layout #bottom_footer {
+    flex-direction: column;
+    align-items: center; } }
+
+#footer-layout #bottom_footer img {
+  width: 2em; }
+
+#footer-layout #bottom_footer ul {
+  align-items: center;
+  display: flex; }
+
+#footer-layout #bottom_footer ul li {
+  margin: 10px;
+  padding-right: 20px; }
+
+#footer-layout i {
+  font-size: 20px; }
+
+#footer-layout #liens_reseaux {
+  display: flex;
+  justify-content: flex-end; }
 
 /*# sourceMappingURL=style.css.map */

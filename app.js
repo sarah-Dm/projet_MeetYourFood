@@ -61,6 +61,12 @@ app.use('/', index);
 const auth = require('./routes/auth.route');
 app.use('/', auth);
 
+const login = require('./routes/login.route');
+app.use('/', login);
+
+const host = require('./routes/host.route');
+app.use('/hosts', host);
+
 // const resultats = require('./routes/resultat-recherche');
 // app.use('/', resultats);
 

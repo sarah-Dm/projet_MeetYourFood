@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 15px;
+  font-family: 'Barlow', sans-serif;
+}
+
+/*
+##     ## ########    ###    ########  ######## ########  
+##     ## ##         ## ##   ##     ## ##       ##     ## 
+##     ## ##        ##   ##  ##     ## ##       ##     ## 
+######### ######   ##     ## ##     ## ######   ########  
+##     ## ##       ######### ##     ## ##       ##   ##   
+##     ## ##       ##     ## ##     ## ##       ##    ##  
+##     ## ######## ##     ## ########  ######## ##     ## 
+*/
+
+/* barre d'accueil HOME */
+
+.header-layout {
+  font-family: 'Barlow', sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  color: black;
+  text-decoration: none;
+}
+
+.header-layout a {
+  text-decoration: none;
+  color: black;
+}
+
+.header-home nav,
+.header-layout nav {
+  display: flex;
+  align-content: center;
+  // justify-content: space-between;
+  // padding-top: 15px;
+  height: 70px;
+  background: #F2F2F2;
+  width: 100%;
+  padding: 40px;
+}
+
+.header-home #logo,
+.header-layout #logo {
+  font-size: 25px;
+
+}
+
+.header-home #menu,
+.header-layout #menu {
+  width: 80%;
+  font-weight: 700;
+  display: flex;
+}
+
+.header-layout #links {
+  display: flex;
+}
+
+.header-layout #mon_compte {
+  display: flex;
+}
+
+// @media (max-width: 740px) {
+//   .header-home #navigation {
+//     visibility: hidden;
+//   }
+
+//   .header-layout #navigation {
+//     visibility: hidden;
+//   }
+// }
+
+
+// .header-home .boutons_hover,
+// .header-layout .boutons_hover {
+//   padding: 8px;
+// }
+
+// .header-home .boutons_hover:hover,
+// .header-layout .boutons_hover:hover {
+//   background: rgba(249, 165, 92, 0.2);
+//   border-radius: 40px;
+// }
+
+// .header-home #mon_compte {
+//   display: flex;
+//   align-items: center;
+//   padding: 15px;
+//   margin: 0px;
+// }
+
+// .header-home #mon_compte i,
+// .header-layout #mon_compte i {
+//   padding-right: 2px;
+// }
+
+// .header-home #mon_compte:hover {
+//   background: rgba(242, 245, 247, 0.2);
+//   border-radius: 40px;
+// }
+
+/* barre d'accueil LAYOUT */
+
+// .header-layout {
+//   color: black;
+// }
+
+// .header-layout #mon_compte {
+//   display: flex;
+//   align-items: center;
+//   padding: 10px;
+//   margin: 0px;
+// }
+
+// .header-layout #mon_compte:hover {
+//   border: 1px solid rgba(82, 83, 83, 0.2);
+//   border-radius: 35px;
+//   box-shadow: 1px 1px 0px grey;
+// }
+
+/*PAGE header-home > formulaire de recherche*/
+
+.header-home #formulaire-recherche-mobile {
+  visibility: hidden;
+}
+
+.header-home #formulaire-recherche {
+  background: rgba(254, 205, 136, 0.6);
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 848px;
+  border-radius: 60px;
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.363);
+  display: flex;
+}
+
+@media (max-width: 928px) {
+
+  /* à partir de 928px, la taille du formulaire de recherche n'est plus fixe elle réduit quand on réduit la page pour qu'elle rentre dans la page*/
+  .header-home #formulaire-recherche {
+    width: 95%;
+  }
+
+  .header-home #formulaire-recherche #demande_lieu,
+  .header-home #formulaire-recherche #demande_date_arrivee,
+  .header-home #formulaire-recherche #demande_date_depart,
+  .header-home #formulaire-recherche #demande_visiteurs {
+    width: 22%;
+  }
+}
+
+@media (max-width: 740px) {
+
+  /* passer en mode mobile */
+  .header-home #formulaire-recherche {
+    visibility: hidden;
+  }
+
+  .header-home #formulaire-recherche-mobile {
+    visibility: visible;
+  }
+}
+
+.header-home #formulaire-recherche-mobile {
+  background: rgba(254, 205, 136, 0.6);
+  border-radius: 50px;
+  display: flex;
+  padding-left: 15px;
+  align-items: center;
+  height: 50px;
+}
+
+.header-home #formulaire-recherche-mobile #loupe-icon-mobile {
+  width: 25px;
+  align-self: center;
+  margin-right: 10px;
+}
+
+.header-home #formulaire-recherche-mobile input {
+  color: grey;
+  border: none;
+  height: 35px;
+  background: none;
+  font-size: 13px;
+  font-family: inherit;
+  align-self: center;
+  width: 210px;
+}
+
+.header-home #formulaire-recherche-mobile input:focus {
+  outline: none;
+}
+
+.header-home #formulaire-recherche section {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  border-radius: 70px;
+  justify-content: center;
+}
+
+.header-home #formulaire-recherche #demande_lieu {
+  padding: 10px 1em 10px 3em;
+}
+
+.header-home #formulaire-recherche label {
+  color: green;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.header-home #formulaire-recherche input {
+  color: grey;
+  border: none;
+  height: 35px;
+  background: none;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.header-home #formulaire-recherche input:focus {
+  outline: none;
+}
+
+.header-home #formulaire-recherche .section_hover:hover,
+.header-home #formulaire-recherche .section_hover input:hover {
+  background: rgba(225, 150, 80, 0.3);
+  cursor: pointer;
+}
+
+.header-home #formulaire-recherche .section_hover label:hover {
+  cursor: pointer;
+}
+
+.header-home #formulaire-recherche .separateur_vertical {
+  background: grey;
+  width: 1px;
+  padding: -7px 0px;
+  margin: 22px 0px;
+}
+
+.header-home #formulaire-recherche section:last-child {
+  margin: 0;
+  padding-left: 0px;
+}
+
+.header-home #formulaire-recherche section:last-child:hover {
+  background: transparent;
+}
+
+.header-home #formulaire-recherche #loupe-icon {
+  width: 60px;
+  background: rgba(255, 20, 147, 1);
+  color: black;
+  padding: 8px;
+  border-radius: 30px;
+}
+
+.header-home #formulaire-recherche #loupe_recherche {
+  flex: 1;
+  padding-right: 10px;
+  padding-left: 5px;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-self: center;
+}
+
+.header-home #formulaire-recherche #loupe-icon:hover {
+  background: rgba(197, 52, 131, 1);
+  cursor: pointer;
+}
+
+.header-home #formulaire-recherche #loupe_recherche:hover {
+  cursor: pointer;
+}
+
+.header-home #formulaire-recherche #demande_visiteurs {
+  padding-right: 0px;
+}
+
+
+
+/*PAGE resultat-recherche > formulaire de recherche*/
+
+#resultat-recherche {
+  padding: 10px 40px;
+}
+
+#resultat-recherche #formulaire-recherche-mobile {
+  visibility: hidden;
+}
+
+#resultat-recherche #formulaire-recherche-rappel {
+  background: rgba(254, 205, 136, 0.6);
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 415px;
+  height: 60px;
+  border-radius: 60px;
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.363);
+  display: flex;
+}
+
+@media (max-width: 928px) {
+
+  #resultat-recherche #formulaire-recherche-rappel #lieu_demande,
+  #resultat-recherche #formulaire-recherche-rappel #dates_demandees,
+  #resultat-recherche #formulaire-recherche-rappel #demande_visiteurs {
+    width: 30%;
+  }
+}
+
+@media (max-width: 740px) {
+
+  /* passer en mode mobile */
+  #resultat-recherche #formulaire-recherche-rappel {
+    visibility: hidden;
+  }
+
+  #resultat-recherche #formulaire-recherche-mobile {
+    visibility: visible;
+  }
+}
+
+#resultat-recherche #formulaire-recherche-mobile {
+  background: rgba(254, 205, 136, 0.6);
+  border-radius: 50px;
+  display: flex;
+  padding-left: 15px;
+  align-items: center;
+  height: 50px;
+}
+
+#resultat-recherche #formulaire-recherche-mobile #loupe-icon-mobile {
+  width: 25px;
+  align-self: center;
+  margin-right: 10px;
+}
+
+#resultat-recherche #formulaire-recherche-mobile input {
+  color: grey;
+  border: none;
+  height: 35px;
+  background: none;
+  font-size: 13px;
+  font-family: inherit;
+  align-self: center;
+  width: 210px;
+}
+
+#resultat-recherche #formulaire-recherche-mobile input:focus {
+  outline: none;
+}
+
+#resultat-recherche #formulaire-recherche-rappel section {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px;
+  border-radius: 70px;
+  justify-content: center;
+  width: 30%;
+}
+
+#resultat-recherche #formulaire-recherche-rappel #lieu_demande {
+  padding: 10px 1em 10px 2em;
+}
+
+.header-home #formulaire-recherche-rappel label {
+  color: green;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+#resultat-recherche #formulaire-recherche-rappel input {
+  color: grey;
+  border: none;
+  height: 35px;
+  background: none;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+#resultat-recherche #formulaire-recherche-rappel input:focus {
+  outline: none;
+}
+
+#resultat-recherche #formulaire-recherche-rappel .section_hover:hover,
+.section_hover input:hover {
+  cursor: pointer;
+}
+
+#resultat-recherche #formulaire-recherche-rappel .section_hover label:hover {
+  cursor: pointer;
+}
+
+#resultat-recherche #formulaire-recherche-rappel .separateur_vertical {
+  background: grey;
+  width: 1px;
+  margin: 22px 0px;
+}
+
+#resultat-recherche #formulaire-recherche-rappel section:last-child {
+  margin: 0;
+  padding-left: 0px;
+}
+
+#resultat-recherche #formulaire-recherche-rappel #loupe-icon {
+  width: 40px;
+  background: rgba(255, 20, 147, 1);
+  color: black;
+  padding: 8px;
+  border-radius: 30px;
+}
+
+#resultat-recherche #formulaire-recherche-rappel #loupe_recherche {
+  flex: 1;
+  padding-right: 10px;
+  padding-left: 5px;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-self: center;
+}
+
+#resultat-recherche #formulaire-recherche-rappel #loupe-icon:hover {
+  background: rgba(197, 52, 131, 1);
+  cursor: pointer;
+}
+
+.header-home #formulaire-recherche-rappel #loupe_recherche:hover {
+  cursor: pointer;
+}
+
+#resultat-recherche #formulaire-recherche-rappel #visiteurs_prevu {
+  padding-right: 0px;
+}
+
+/* 
+##     ##    ###    #### ##    ## 
+###   ###   ## ##    ##  ###   ## 
+#### ####  ##   ##   ##  ####  ## 
+## ### ## ##     ##  ##  ## ## ## 
+##     ## #########  ##  ##  #### 
+##     ## ##     ##  ##  ##   ### 
+##     ## ##     ## #### ##    ## 
+ */
+
+#resultat-recherche .annonce {
+  display: flex;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+#resultat-recherche .annonce p {
+  font-size: 12px;
+}
+
+#resultat-recherche .annonce img {
+  width: 300px;
+  align-self: center;
+  border-radius: 20px;
+}
+
+#resultat-recherche #caractérisiques-synthese {
+  width: 45%;
+  margin-left: 10px;
+  margin-right: 20px;
+  flex: 1;
+}
+
+#caractérisiques-synthese #prix-synthese {
+  text-align: end;
+  margin-top: 15px;
+}
+

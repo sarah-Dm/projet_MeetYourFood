@@ -71,6 +71,8 @@ router.post(
         maximumVisitors,
       } = req.body;
       // const photos = req.file.path; //gérer plusieurs photos dans un 2e champs distinct de celui ProfilPic, que écrire en haut ? fileUploader.array('profilePic') sinon prévoir un 2e formulaire pour télécharger les photos de ferme
+      const profilePic = req.file.path;
+
       const hashedPassword = bcryptjs.hashSync(password, salt);
 
       User.create({
@@ -80,7 +82,7 @@ router.post(
         userName,
         email,
         hashedPassword,
-        profilePic, //photo à gérer
+        profilePic, //photo gérée
       })
         .then((user) => {
           Host.create({

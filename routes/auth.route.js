@@ -18,31 +18,42 @@ router.post(
   '/create-account',
   fileUploader.single('profilePic'), //visiteur ne peut poster qu'1 seule photo mais l'host doit pouvoir poser plusieurs photos (a minima profilePic + 1 photo)
   (req, res, next) => {
-    const { profileType } = req.body;
+    const {
+      profileType
+    } = req.body;
     //option 1) si user est un user simple = visitor
     if (profileType === 'visitor') {
-      const { firstName, lastName, userName, email, password } = req.body;
-      const profilePic = req.file.path;
-      const hashedPassword = bcryptjs.hashSync(password, salt);
-
-      User.create({
-        host: false,
+      const {
         firstName,
         lastName,
         userName,
         email,
-        hashedPassword,
-        profilePic,
-      })
+        password
+      } = req.body;
+      const profilePic = req.file.path;
+      const hashedPassword = bcryptjs.hashSync(password, salt);
+
+      User.create({
+          host: false,
+          firstName,
+          lastName,
+          userName,
+          email,
+          hashedPassword,
+          profilePic,
+        })
         .then((user) => {
-          res.send('Visitor created !', user);
+          console.log('user', user)
+          res.send('Visitor created !');
         })
         .catch((err) => {
           console.log('error visitor not created');
           if (err instanceof mongoose.Error.ValidationError) {
             res
               .status(500)
-              .render('auth/create-account', { errorMessage: err.message });
+              .render('auth/create-account', {
+                errorMessage: err.message
+              });
           } else {
             next(err);
           }
@@ -76,36 +87,37 @@ router.post(
       const hashedPassword = bcryptjs.hashSync(password, salt);
 
       User.create({
-        host: true,
-        firstName,
-        lastName,
-        userName,
-        email,
-        hashedPassword,
-        profilePic, //photo gérée
-      })
+          host: true,
+          firstName,
+          lastName,
+          userName,
+          email,
+          hashedPassword,
+          profilePic, //photo gérée
+        })
         .then((user) => {
           Host.create({
-            userId: user.id,
-            farmName,
-            description,
-            address,
-            zipCode,
-            city,
-            farmType,
-            activitiesType,
-            certifications,
-            public,
-            photos, //photos à gérer
-            openingDays,
-            openingHoursStart,
-            openingHoursEnd,
-            spokenLanguages,
-            maximumVisitors,
-          })
+              userId: user.id,
+              farmName,
+              description,
+              address,
+              zipCode,
+              city,
+              farmType,
+              activitiesType,
+              certifications,
+              public,
+              photos, //photos à gérer
+              openingDays,
+              openingHoursStart,
+              openingHoursEnd,
+              spokenLanguages,
+              maximumVisitors,
+            })
             .then((host) => {
               //meme si email pas unique, passe dans then()
-              res.send('Host created !', user, host);
+              console.log('host', user, host)
+              res.send('Host created !');
             })
             .catch((err) => {
               console.log('error host not created');
@@ -123,11 +135,12 @@ router.post(
           if (err instanceof mongoose.Error.ValidationError) {
             res
               .status(500)
-              .render('auth/create-account', { errorMessage: err.message });
+              .render('auth/create-account', {
+                errorMessage: err.message
+              });
           } else if (err.code === 11000) {
             res.status(500).render('auth/create-account', {
-              errorMessage:
-                'Username and email need to be unique. Either username or email is already used.',
+              errorMessage: 'Username and email need to be unique. Either username or email is already used.',
             });
           } else {
             next(err);

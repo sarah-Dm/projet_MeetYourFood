@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;700&display=swap");
 * {
   padding: 0px;
@@ -8,7 +9,7 @@ body {
   margin: 0px;
   padding: 0px;
   font-size: 18px;
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   min-height: 100vh; }
 
 .homepage {
@@ -21,6 +22,10 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column; }
+
+main {
+  padding-top: 70px;
+  padding-bottom: 30px; }
 
 /*
 ##     ## ########    ###    ########  ######## ########  
@@ -42,7 +47,7 @@ body {
 
 .header-layout,
 .header-home {
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: 18px;
   color: black;
   text-decoration: none;
@@ -50,8 +55,9 @@ body {
   display: flex;
   align-items: center;
   flex-direction: row;
-  background: #F2F2F2;
-  width: 100%; }
+  background: #f2f2f2;
+  width: 100%;
+  position: fixed; }
 
 .header-home #logo,
 .header-layout #logo {
@@ -81,7 +87,7 @@ body {
   margin-right: 45px; }
 
 #account-block {
-  background: #F2C94C;
+  background: #f2c94c;
   height: 90px;
   display: flex;
   padding-right: 20px; }
@@ -139,8 +145,8 @@ body {
   visibility: hidden;
   height: 0px; }
 
-#formulaire-recherche {
-  background: #F2F2F2;
+.formulaire-recherche {
+  background: #f2f2f2;
   align-content: center;
   margin-left: auto;
   margin-right: auto;
@@ -155,7 +161,7 @@ body {
   width: 15%;
   display: flex;
   align-items: center;
-  background-color: #F2994A;
+  background-color: #f2994a;
   height: 100%;
   border-radius: 100px; }
 
@@ -195,6 +201,93 @@ select {
 #demande_lieu {
   width: 40%; }
 
+/***
+ *    ███████  ██████  ██████  ███    ███ ███████ 
+ *    ██      ██    ██ ██   ██ ████  ████ ██      
+ *    █████   ██    ██ ██████  ██ ████ ██ ███████ 
+ *    ██      ██    ██ ██   ██ ██  ██  ██      ██ 
+ *    ██       ██████  ██   ██ ██      ██ ███████ 
+ *                                                
+ *                                                
+ */
+.form {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+  min-height: 100vh; }
+
+.form h1 {
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 10%; }
+
+.form input {
+  display: block; }
+
+.form input,
+select,
+textarea {
+  margin-bottom: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+  background-color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  color: grey; }
+
+.form button {
+  background-color: #f2c94c;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 29px;
+  padding: 10px 20px;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  margin: 5% 40%; }
+
+.form p {
+  font-weight: 700; }
+
+.form .checkbox {
+  display: flex; }
+
+.form fieldset {
+  border: none;
+  margin-bottom: 30px; }
+
+.form legend {
+  margin-bottom: 10px;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 700; }
+
+.checkbox label {
+  text-transform: none;
+  font-weight: 400; }
+
+input[type="checkbox"] {
+  margin-right: 14px; }
+
+input.upload {
+  border: none; }
+
+.field {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 30px; }
+
+.form .field {
+  text-transform: uppercase;
+  font-weight: 700; }
+
 /*
 ########  #######   #######  ######## ######## ########  
 ##       ##     ## ##     ##    ##    ##       ##     ## 
@@ -226,7 +319,7 @@ select {
 
 /* bottom footer */
 #footer-layout {
-  background: #F2F2F2;
+  background: #f2f2f2;
   padding-left: 45px;
   padding-right: 45px; }
 

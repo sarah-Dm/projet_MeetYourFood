@@ -13,36 +13,18 @@ router.get('/create-account', (req, res, next) => {
   res.render('auth/create-account');
 });
 
-// Route de traitement du formulaire de création de compte (Host)
+// Route de traitement du formulaire de création de compte (Visitor + Host)
 router.post(
   '/create-account',
-  fileUploader.single('photos'),
+  fileUploader.single('profilePic'), //visiteur ne peut poster qu'1 seule photo mais l'host doit pouvoir poser plusieurs photos (a minima profilePic + 1 photo)
   (req, res, next) => {
-    const {
-      profileType,
-      firstName,
-      lastName,
-      userName,
-      email,
-      password,
-      farmName,
-      description,
-      address,
-      zipCode,
-      city,
-      farmType,
-      activitiesType,
-      certifications,
-      public,
-      openingDays,
-      openingHoursStart,
-      openingHoursEnd,
-      spokenLanguages,
-      maximumVisitors,
-    } = req.body;
-    const photos = req.file.path;
-    const hashedPassword = bcryptjs.hashSync(password, salt);
+    const { profileType } = req.body;
+    //option 1) si user est un user simple = visitor
     if (profileType === 'visitor') {
+      const { firstName, lastName, userName, email, password } = req.body;
+      const profilePic = req.file.path;
+      const hashedPassword = bcryptjs.hashSync(password, salt);
+
       User.create({
         host: false,
         firstName,
@@ -50,7 +32,7 @@ router.post(
         userName,
         email,
         hashedPassword,
-        // profilePic,//gérer plusieurs photos ?
+        profilePic,
       })
         .then((user) => {
           res.send('Visitor created !', user);
@@ -65,7 +47,32 @@ router.post(
             next(err);
           }
         });
+      //option 2) si user est un user host
     } else {
+      const {
+        firstName,
+        lastName,
+        userName,
+        email,
+        password,
+        farmName,
+        description,
+        address,
+        zipCode,
+        city,
+        farmType,
+        activitiesType,
+        certifications,
+        public,
+        openingDays,
+        openingHoursStart,
+        openingHoursEnd,
+        spokenLanguages,
+        maximumVisitors,
+      } = req.body;
+      // const photos = req.file.path; //gérer plusieurs photos dans un 2e champs distinct de celui ProfilPic, que écrire en haut ? fileUploader.array('profilePic') sinon prévoir un 2e formulaire pour télécharger les photos de ferme
+      const hashedPassword = bcryptjs.hashSync(password, salt);
+
       User.create({
         host: true,
         firstName,
@@ -73,7 +80,7 @@ router.post(
         userName,
         email,
         hashedPassword,
-        // profilePic,
+        profilePic, //photo à gérer
       })
         .then((user) => {
           Host.create({
@@ -87,7 +94,7 @@ router.post(
             activitiesType,
             certifications,
             public,
-            photos,
+            photos, //photos à gérer
             openingDays,
             openingHoursStart,
             openingHoursEnd,
@@ -101,9 +108,9 @@ router.post(
             .catch((err) => {
               console.log('error host not created');
               if (err instanceof mongoose.Error.ValidationError) {
-                res
-                  .status(500)
-                  .render('auth/create-account', { errorMessage: err.message });
+                res.status(500).render('auth/create-account', {
+                  errorMessage: err.message,
+                });
               } else {
                 next(err);
               }

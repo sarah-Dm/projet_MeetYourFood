@@ -1,8 +1,10 @@
-<form action='/create-account' method="POST" enctype="multipart/form-data">
-  <label>Which profile are you ?<select name="profilType">
-      <option value='visitor' selected="selected" id='visitor-option'>Visitor</option>
-      <option value='host'>Host</option>
-    </select></label>
+<form action='/create-account' method="POST" enctype="multipart/form-data" id="createAccountForm">
+  <label>Which profile are you ?
+    <select name="profileType" id="profileSelection" >
+      <option value='host' id='host-option' class="profileOptions">Host</option>
+      <option value='visitor' id='visitor-option' class="profileOptions">Visitor</option>
+    </select>
+  </label>
   <div id="user-form">
     <label>Firstname *<input type='text' name="firstName"></label>
     <label>Lastname *<input type='text' name="lastName"></label>
@@ -10,8 +12,6 @@
     <label>Email *<input type='email' name="email"></label>
     <label>Password *<input type='password' name="password" placeholder="**********"></label>
     <label>Profile picture<input type="file" name="profilePic" /></label>
-
-    
   </div>
   <div id='host-form'>
     <label>Farm name *<input type='text' name="farmName"></label>

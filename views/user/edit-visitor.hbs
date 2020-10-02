@@ -1,0 +1,21 @@
+<div class="form create-account">
+  <h1>EDIT MY ACCOUNT</h1>
+  <form action='/edit-account' method="POST" enctype="multipart/form-data" id="createAccountForm">
+    <div id="user-form">
+      <label class="field">Firstname *<input type='text' name="firstName" value="{{user.firstName}}"></label>
+      <label class="field">Lastname *<input type='text' name="lastName" value="{{user.lastName}}"></label>
+      <label class="field">Username *<input type='text' name="userName" value="{{user.userName}}"></label>
+      <label class="field">Email *<input type='email' name="email" value="{{user.email}}"></label>
+      <label class="field">Password *<input type='password' name="password" placeholder="**********"
+          value="{{user.password}}"></label>
+      <label class="field">Profile picture<input type="file" name="profilePic" class="upload" /></label>
+    </div>
+
+    <button class="btn primary">Submit</button>
+    <p class="mandatory">* ALL FIELDS ARE MANDATORY</p>
+  </form>
+
+  {{#if errorMessage}}
+  <p class="error-message">{{errorMessage}}</p>
+  {{/if}}
+</div>

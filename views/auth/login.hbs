@@ -3,9 +3,9 @@
   <form action="/login" method="POST">
     <label class="field">Email<input type='text' name='email'> </label>
     <label class="field">Password<input type='password' name='password'></label>
-    <button>Submit</button>
+    <button class="btn primary">Submit</button>
     {{#if errorMessage}}
-    <p>{{errorMessage}}</p>
+    <p class="error-message">{{errorMessage}}</p>
     {{/if}}
   </form>
 </div>

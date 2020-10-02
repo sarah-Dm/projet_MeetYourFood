@@ -11,77 +11,80 @@
 </head>
 
 <body>
-  <header class="header-layout">
-    <h1 id="logo"><a href="/" alt="MeetYourFood">MeetYourFood 🥕</a></h1>
-    <nav>
-      <ul id="links">
-        <li><a class="boutons_hover" href="/hosts">Meet our hosts</a></li>
-        <li><a class="boutons_hover" href="/create-account?host=1">Become a host</a></li>
-      </ul>
-      <div id="account-block">
-        <ul id="mon_compte">
-          <i class="far fa-user-circle"></i>
-          <div id="account-links">
-            <li><a href="/login">Login</a></li>
-            <li id="create-account"><a href="/create-account">Create an account</a></li>
-          </div>
+  <div class="main-container">
+    <header class="header-layout">
+      <h1 id="logo"><a href="/" alt="MeetYourFood">MeetYourFood 🥕</a></h1>
+      <nav>
+        <ul id="links">
+          <li><a class="boutons_hover" href="/hosts">Meet our hosts</a></li>
+          <li><a class="boutons_hover" href="/create-account?host=1">Become a host</a></li>
         </ul>
-      </div>
-    </nav>
-  </header>
-  <main>
-    {{{body}}}
-  </main>
-  <footer id="footer-layout">
-    <ul id="sommaire">
-      <ul>
-        <li>ABOUT</li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Careers</a></li>
+        <div id="account-block">
+          <ul id="mon_compte">
+            <i class="far fa-user-circle"></i>
+            <div id="account-links">
+              <li><a href="/login">Login</a></li>
+              <li id="create-account"><a href="/create-account">Create an account</a></li>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="content">
+      {{{body}}}
+    </main>
+    <footer id="footer-layout">
+      <ul id="sommaire">
+        <ul>
+          <li>ABOUT</li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+        <ul>
+          <li>COMMUNITY</li>
+          <li><a href="#">Partnerships</a></li>
+          <li><a href="#">Share with friends</a></li>
+        </ul>
+        <ul>
+          <li>HOST</li>
+          <li><a href="/create-account?host=1">Become a host</a></li>
+          <li><a href="#">Share with friends</a></li>
+        </ul>
+        <ul>
+          <li>ASSISTANCE</li>
+          <li><a href="#">Help center</a></li>
+          <li><a href="#">Cancel options</a></li>
+        </ul>
       </ul>
-      <ul>
-        <li>COMMUNITY</li>
-        <li><a href="#">Partnerships</a></li>
-        <li><a href="#">Share with friends</a></li>
-      </ul>
-      <ul>
-        <li>HOST</li>
-        <li><a href="/create-account?host=1">Become a host</a></li>
-        <li><a href="#">Share with friends</a></li>
-      </ul>
-      <ul>
-        <li>ASSISTANCE</li>
-        <li><a href="#">Help center</a></li>
-        <li><a href="#">Cancel options</a></li>
-      </ul>
-    </ul>
-    <hr>
-    <section id="bottom_footer">
-      <p>©2020 MeetYourFood, Inc. All rights reserved</p>
-      <ul id="liens">
-        <li>Cookie policy and Personal data</li>
-        <li>Legal notice</li>
-        <li>Sitemap</li>
-      </ul>
-      {{!-- <ul>
+      <hr>
+      <section id="bottom_footer">
+        <p>©2020 MeetYourFood, Inc. All rights reserved</p>
+        <ul id="liens">
+          <li>Cookie policy and Personal data</li>
+          <li>Legal notice</li>
+          <li>Sitemap</li>
+        </ul>
+        {{!-- <ul>
         <li>langue de la page</li>
         <!--langage of the page-->
         <li>devise de la page</li>
         <!--currency of the page-->
       </ul> --}}
-      <ul id="liens_reseaux">
-        <li>
-          <a href="#"><i class="fab fa-facebook"></i> </a>
-        </li>
-        <li>
-          <a href="#"><i class="fab fa-twitter-square"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </li>
-      </ul>
-    </section>
-  </footer>
+        <ul id="liens_reseaux">
+          <li>
+            <a href="#"><i class="fab fa-facebook"></i> </a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter-square"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+      </section>
+    </footer>
+  </div>
   <script type="text/javascript" src="../javascripts/script.js"></script>
 </body>
+
 </html>

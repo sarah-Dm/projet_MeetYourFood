@@ -3,6 +3,6 @@
   <form action='edit-visitor/{{user.id}}' method="POST">
     <label class="field"><input type="email" value="{{user.email}}" name="email"></label>
     <label class="field"><input type="password" value="{{user.password}}" name="password"></label>
-    <button>Edit</button>
-  </form><a href="/user/{{user.id}}/delete">Delete</a>
+    <button class="btn primary">Edit</button>
+  </form><a href="/user/{{user.id}}/delete" class="btn secondary">Delete</a>
 </div>

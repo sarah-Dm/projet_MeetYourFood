@@ -1,20 +1,41 @@
-<a href="/hosts">Back to list</a>
-<img src="{{host.photos}}">
-{{!-- A FAIRE LES REVIEWS : --}}
-<p>CITY : {{host.city}} - {{host.country}}</p>
-<p>FARM Title : {{host.farmName}}</p>
-<p>ADDRESS :{{host.address}}
-  {{host.zipCode}} - {{host.city}}
-</p>
-{{!-- A FAIRE LE AVERAGE CART :--}}
-<a href="mailto:{{user.email}}">Contact your host</a>
-<div>
-  <p>Type of farm : {{host.farmType}}</p>
-  <p>Certifications : {{host.certifications}}</p>
-  <p>Type of activities : {{host.activitiesType}}</p>
-  <p>Public : {{host.public}}</p>
-  <p>Opening days : {{host.openingDays}}</p>
-  <p>Opening hours : {{host.openingHours}}</p>
+<div id="host-detail-container">
+  <a href="/hosts" class="btn secondary">Back to list</a>
+  <div id="host-block-top">
+    <section id="slider"><img src="{{host.photos}}"></section>
+    {{!-- A FAIRE LES REVIEWS : --}}
+    <aside>
+      <p><span class="label">CITY :</span> {{host.city}} - {{host.country}}</p>
+      <h1>{{host.farmName}}</h1>
+      <p id="address"><span class="label">ADDRESS :</span>
+      <p>{{host.address}}
+        {{host.zipCode}} - {{host.city}}</p>
+      </p>
+      {{!-- A FAIRE LE AVERAGE CART :--}}
+      <a href="mailto:{{user.email}}" class="btn primary">Contact your host</a>
+    </aside>
+  </div>
+  <div id="host-block-info">
+    <div id="host-main-info">
+      <div id="host-orange-block">
+        <div id="info">
+          <p><span class="label">Type of farm : </span>{{host.farmType}}</p>
+          <p><span class="label">Certifications : </span>{{host.certifications}}</p>
+          <p><span class="label">Type of activities :</span> {{host.activitiesType}}</p>
+          <p><span class="label">Public : </span>{{host.public}}</p>
+        </div>
+        <div id="opening">
+          <p><span class="label">Opening days :</span> </p>
+          <ul>{{#each host.openingDays}}<li>{{this}}</li> {{/each}}</ul>
+
+          <p><span class="label">Opening hours :</span> {{host.openingHours}}</p>
+        </div>
+      </div>
+      <aside>
+        <img class="profile-pic" src="{{user.profilePic}}">
+        <p><span class="label">HOST : </span>{{user.firstName}} {{user.lastName}}</p>
+      </aside>
+    </div>
+    <p id="description">{{host.description}}</p>
+  </div>
+
 </div>
-<p>HOST : {{user.firstName}} {{user.lastName}}</p>
-<p>{{host.description}}</p>

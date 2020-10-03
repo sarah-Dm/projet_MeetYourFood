@@ -50,8 +50,16 @@ button:focus {
 .primary {
   background-color: var(--yellow); }
 
+.primary:hover {
+  transition-duration: 0.1s;
+  background-color: var(--grey); }
+
 .secondary {
   background-color: var(--grey); }
+
+.secondary:hover {
+  transition-duration: 0.1s;
+  background-color: var(--yellow); }
 
 .main-container {
   display: flex;
@@ -70,15 +78,9 @@ button:focus {
   height: 100px;
   margin: auto; }
 
-/*
-##     ## ########    ###    ########  ######## ########  
-##     ## ##         ## ##   ##     ## ##       ##     ## 
-##     ## ##        ##   ##  ##     ## ##       ##     ## 
-######### ######   ##     ## ##     ## ######   ########  
-##     ## ##       ######### ##     ## ##       ##   ##   
-##     ## ##       ##     ## ##     ## ##       ##    ##  
-##     ## ######## ##     ## ########  ######## ##     ## 
-*/
+.mandatory {
+  font-weight: 700; }
+
 .header-layout a,
 .header-home a {
   text-decoration: none;
@@ -402,11 +404,11 @@ input.upload {
   text-transform: uppercase;
   font-weight: 700; }
 
-.form .primary {
+.create-account .primary,
+.login .primary,
+.edit-visitor .primary,
+.edit-host .primary {
   margin: 5% 40%; }
-
-.mandatory {
-  font-weight: 700; }
 
 #opening-hours {
   display: flex; }
@@ -415,15 +417,14 @@ input.upload {
   margin-right: 50px;
   width: 50%; }
 
-/*
-########  #######   #######  ######## ######## ########  
-##       ##     ## ##     ##    ##    ##       ##     ## 
-##       ##     ## ##     ##    ##    ##       ##     ## 
-######   ##     ## ##     ##    ##    ######   ########  
-##       ##     ## ##     ##    ##    ##       ##   ##   
-##       ##     ## ##     ##    ##    ##       ##    ##  
-##        #######   #######     ##    ######## ##     ## 
-*/
+#btn {
+  display: flex; }
+
+.visitor-profile .btn {
+  margin: 0 auto;
+  width: 30%;
+  text-align: center; }
+
 /* footer sommaire */
 #footer-layout ul {
   padding-left: 0px;

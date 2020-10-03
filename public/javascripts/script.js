@@ -25,19 +25,12 @@ function changeForm(event) {
 
   const value = event.target.value; // "visitor" / "host"
 
-  if (profileSelection.selectedIndex === 1) {
+  if (value === 'visitor') {
     //si l'option index1 (visiteur) est séléctionnée, supprimer la partie host du questionnaire
-
-    createAccountForm.classList.remove('host')
-
-    visitorOption.setAttribute('selected', 'selected');
-    hostOption.removeAttribute('selected');
-    createAccountForm.removeChild(hostForm);
+    createAccountForm.classList.remove('host');
   } else {
     //si l'option visiteur n'est pas séléctionnée
-    visitorOption.removeAttribute('selected');
-    hostOption.setAttribute('selected', 'selected');
-    createAccountForm.appendChild(hostForm);
+ createAccountForm.classList.add('host');
   }
   console.log('changed');
 }

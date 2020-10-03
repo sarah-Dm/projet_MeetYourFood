@@ -72,7 +72,7 @@ app.use('/', login);
 const host = require('./routes/host.route');
 app.use('/hosts', host);
 
-const recherche = require('./routes/recherche.route');
-app.use('/', recherche);
+const hosts = require('./routes/recherche.route');
+app.use('/hosts', hosts);
 
 module.exports = app;

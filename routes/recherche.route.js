@@ -4,7 +4,7 @@ const Host = require('../models/Host.model');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-router.get('/recherche', (req, res, next) => {
+router.get('/', (req, res, next) => {
   Host.find()
     .populate('userId')
     .then((resultats) => {

@@ -19,9 +19,17 @@ const profileSelection = document.querySelector('#profileSelection');
 
 //lié le selected au changement du form
 
-function changeForm() {
+function changeForm(event) {
+
+  console.log('event', event)
+
+  const value = event.target.value; // "visitor" / "host"
+
   if (profileSelection.selectedIndex === 1) {
     //si l'option index1 (visiteur) est séléctionnée, supprimer la partie host du questionnaire
+
+    createAccountForm.classList.remove('host')
+
     visitorOption.setAttribute('selected', 'selected');
     hostOption.removeAttribute('selected');
     createAccountForm.removeChild(hostForm);

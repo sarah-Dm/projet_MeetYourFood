@@ -8,6 +8,7 @@ const salt = bcryptjs.genSaltSync(saltRounds);
 const mongoose = require("mongoose");
 const router = express.Router();
 
+
 // Route d'affichage du formulaire d'édition Host + Visitor
 router.get("/:userId", (req, res, next) => {
   User.findById(req.params.userId)

@@ -462,6 +462,11 @@ select {
   padding-top: 5%;
 }
 
+// Si la classe du formulaire n'est pas host alors on agit sur l'id = host-form
+.create-account form:not(.host) #host-form {
+  display: none;
+}
+
 .form h1 {
   font-weight: 400;
   text-align: center;

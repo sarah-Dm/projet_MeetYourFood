@@ -13,15 +13,10 @@ router.get('/create-account', (req, res, next) => {
   console.log(req.query, req.query === {
     host: '1'
   });
-  //si req.query = {host:1}, afficher formulaire avec host en profileType
-  if (req.query.host === '1') {
-    res.render('auth/create-account');
-  } else {
-    //si req.query = {}, afficher formulaire avec vistor en profileType
-    //profileSelection.selectedIndex = 1;
-    //changeForm();
-    res.send('formulaire visitor');
-  }
+
+  res.render('auth/create-account', {
+    host: req.query.host === '1' // true ou false
+  })
 });
 
 // router.get('/create-account', (req, res, next) => {

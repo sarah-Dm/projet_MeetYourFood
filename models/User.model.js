@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
+    profileType: String, //ajouté
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
     email: {

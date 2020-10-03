@@ -1,0 +1,21 @@
+
+<div> 
+  {{!-- A changer si on veut affiche les photos du Host et non la profilePic du user --}}
+
+  {{!-- <img src="{{this.userId.profilePic}}" alt="photo">  --}}
+  <div class="recherche-image" style='background-image: url({{this.userId.profilePic}})'>
+    <p>Average Cart : {{this.averageCart}}</p>
+  {{!-- à traiter --}}
+  <div class="rating">
+      <p>Rate: <b>{{this.rate}} </b></p>  
+      <p>Number of reviews <b>{{this.numberOfReviews}}</b></p>
+    </div>
+  </div>
+  {{!-- à traiter --}}
+  
+
+  <h3>CITY : {{this.city}} - FRANCE</h3>
+  <h3><b>{{this.farmName}}</b> - HOST: {{this.userId.userName}} </h3>
+  {{!-- comment les séparer les farmType par un espace ? --}}
+  <h3>{{this.farmType}}</h3> 
+</div>

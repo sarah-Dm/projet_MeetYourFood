@@ -11,7 +11,7 @@ const path = require('path');
 
 mongoose
   .connect('mongodb://localhost/meetyourfood', {
-    useNewUrlParser: true
+    useNewUrlParser: true,
   })
   .then((x) => {
     console.log(
@@ -28,13 +28,16 @@ const debug = require('debug')(
 );
 
 const app = express();
+require('./configs/session.config')(app);
 
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+app.use(
+  bodyParser.urlencoded({
+    extended: false,
+  })
+);
 app.use(cookieParser());
 
 // Express View engine setup
@@ -52,6 +55,8 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
+hbs.registerPartials(__dirname + '/views/partials');
+
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 
@@ -67,16 +72,7 @@ app.use('/', login);
 const host = require('./routes/host.route');
 app.use('/hosts', host);
 
-// const resultats = require('./routes/resultat-recherche');
-// app.use('/', resultats);
-
-// const home = require('./routes/home');
-// app.use('/', home);
-
-// const monCompte = require('./routes/mon-compte');
-// app.use('/', monCompte);
-
-// const ficheHote = require('./routes/product_hote_creation');
-// app.use('/', ficheHote);
+const recherche = require('./routes/recherche.route');
+app.use('/', recherche);
 
 module.exports = app;

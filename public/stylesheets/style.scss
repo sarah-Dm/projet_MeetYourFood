@@ -15,7 +15,8 @@ body {
 }
 
 .homepage {
-  background: url('https://res.cloudinary.com/nina3am/image/upload/v1601452001/meet-your-food/466658-PFX5MG-6_m3ynfh.jpg') no-repeat center center fixed;
+  background: url('https://res.cloudinary.com/nina3am/image/upload/v1601452001/meet-your-food/466658-PFX5MG-6_m3ynfh.jpg')
+    no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -35,7 +36,6 @@ body {
 ##     ## ##       ##     ## ##     ## ##       ##    ##  
 ##     ## ######## ##     ## ########  ######## ##     ## 
 */
-
 
 .header-layout a,
 .header-home a {
@@ -58,7 +58,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: row;
-  background: #F2F2F2;
+  background: #f2f2f2;
   width: 100%;
   // padding: 30px;
 }
@@ -69,7 +69,6 @@ body {
   margin-right: auto;
   align-items: center;
   padding-left: 45px;
-
 }
 
 .header-home nav,
@@ -85,7 +84,7 @@ body {
 
 .header-layout li,
 .header-home li {
-  margin-left: 25px
+  margin-left: 25px;
 }
 
 .header-layout #links,
@@ -97,7 +96,7 @@ body {
 }
 
 #account-block {
-  background: #F2C94C;
+  background: #f2c94c;
   height: 90px;
   display: flex;
   padding-right: 20px;
@@ -114,7 +113,7 @@ body {
 .header-layout #account-links li,
 .header-home #account-links li {
   padding-top: 10px;
-  padding-bottom: 10px
+  padding-bottom: 10px;
 }
 
 .header-layout #create-account,
@@ -140,7 +139,7 @@ body {
   }
 }
 
-// PAGE D'ACCUEIL 
+// PAGE D'ACCUEIL
 #page_accueil {
   display: flex;
   flex: 1;
@@ -173,7 +172,7 @@ body {
 }
 
 #formulaire-recherche {
-  background: #F2F2F2;
+  background: #f2f2f2;
   align-content: center;
   margin-left: auto;
   margin-right: auto;
@@ -190,7 +189,7 @@ body {
   width: 15%;
   display: flex;
   align-items: center;
-  background-color: #F2994A;
+  background-color: #f2994a;
   height: 100%;
   border-radius: 100px;
 }
@@ -211,7 +210,6 @@ body {
   flex-direction: column-reverse;
   font-weight: 700;
 }
-
 
 .form-field input,
 select {
@@ -274,7 +272,7 @@ select {
 
 /* bottom footer */
 #footer-layout {
-  background: #F2F2F2;
+  background: #f2f2f2;
   padding-left: 45px;
   padding-right: 45px;
 }
@@ -291,7 +289,6 @@ select {
 }
 
 @media (max-width: 375px) {
-
   #footer-layout #sommaire,
   #footer-layout #bottom_footer {
     padding: 10px 20px;
@@ -309,7 +306,7 @@ select {
     align-items: start;
   }
 
-  #footer-layout #bottom_footer>ul {
+  #footer-layout #bottom_footer > ul {
     display: flex;
     flex-direction: row;
   }
@@ -347,4 +344,39 @@ select {
 #footer-layout #liens_reseaux {
   display: flex;
   justify-content: flex-end;
+}
+
+#pageRecherche ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+#pageRecherche ul li {
+  width: 45%;
+  margin: 20px 20px 0px 20px;
+}
+
+#pageRecherche h3 {
+  text-transform: capitalize;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  font-size: 16px;
+}
+
+#pageRecherche .recherche-image {
+  background-size: cover;
+  height: 250px;
+  border-radius: 35px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 35px;
+  align-items: flex-end;
+  color: white;
+  text-shadow: 1px 1px black;
+  margin: 20px 0px;
+}
+
+#pageRecherche .rating {
+  display: flex;
 }

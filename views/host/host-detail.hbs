@@ -4,7 +4,7 @@
     <section id="slider"><img src="{{host.photos}}"></section>
     {{!-- A FAIRE LES REVIEWS : --}}
     <aside>
-      <p><span class="label">CITY :</span> {{host.city}} - {{host.country}}</p>
+      <p class="capitalize"><span class="label">CITY :</span> {{host.city}} - {{host.country}}</p>
       <h1>{{host.farmName}}</h1>
       <p id="address"><span class="label">ADDRESS :</span>
       <p>{{host.address}}
@@ -18,14 +18,14 @@
     <div id="host-main-info">
       <div id="host-orange-block">
         <div id="info">
-          <p><span class="label">Type of farm : </span>{{host.farmType}}</p>
-          <p><span class="label">Certifications : </span>{{host.certifications}}</p>
-          <p><span class="label">Type of activities :</span> {{host.activitiesType}}</p>
-          <p><span class="label">Public : </span>{{host.public}}</p>
+          <p class="capitalize"><span class="label">Type of farm : </span>{{host.farmType}}</p>
+          <p class="capitalize"><span class="label">Certifications : </span>{{host.certifications}}</p>
+          <p class="capitalize"><span class="label">Type of activities :</span> {{host.activitiesType}}</p>
+          <p class="capitalize"><span class="label">Public : </span>{{host.public}}</p>
         </div>
         <div id="opening">
           <p><span class="label">Opening days :</span> </p>
-          <ul>{{#each host.openingDays}}<li>{{this}}</li> {{/each}}</ul>
+          <ul class="capitalize" >{{#each host.openingDays}}<li>{{this}}</li> {{/each}}</ul>
 
           <p><span class="label">Opening hours :</span> {{host.openingHours}}</p>
         </div>

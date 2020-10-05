@@ -19,11 +19,6 @@ router.get('/create-account', (req, res, next) => {
   })
 });
 
-// router.get('/create-account', (req, res, next) => {
-//   // res.render('auth/create-account');
-//   res.send('hello');
-// });
-
 // Route de traitement du formulaire de création de compte (Visitor + Host)
 router.post(
   '/create-account',

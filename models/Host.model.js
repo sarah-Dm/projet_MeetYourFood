@@ -48,7 +48,7 @@ const hostSchema = new Schema(
     longitude: String,
     certifications: {
       type: [String],
-      enum: ['bio', 'aoc', 'aop', 'hve', 'rse', 'biodynamic'],
+      enum: ['bio', 'AOC', 'AOP', 'HVE', 'RSE', 'biodynamic'],
     },
     public: {
       type: [String],

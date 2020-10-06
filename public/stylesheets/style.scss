@@ -105,6 +105,9 @@ button:focus {
   font-weight: 700;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
 // #     #
 // #     # ######   ##   #####  ###### #####
 // #     # #       #  #  #    # #      #    #
@@ -332,6 +335,7 @@ button:focus {
 #host-orange-block #info,
 #host-orange-block #opening {
   width: 50%;
+  margin: 0px 2px;
 }
 
 #host-detail-container #opening li {
@@ -353,6 +357,17 @@ button:focus {
 #host-block-info #description {
   margin-top: 3%;
   margin-bottom: 3%;
+}
+
+#host-detail-container #new-reviews {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+#host-detail-container button {
+  align-self: center;
+  width: 20%;
 }
 
 // ######
@@ -389,6 +404,7 @@ button:focus {
   background-color: var(--orange);
   height: 100%;
   border-radius: 100px;
+  border: none;
 }
 
 #loupe-icon {
@@ -545,6 +561,8 @@ input.upload {
   width: 50%;
 }
 
+#review
+
 // #######
 // #       #####  # #####    #    # #  ####  # #####  ####  #####
 // #       #    # #   #      #    # # #      #   #   #    # #    #
@@ -681,15 +699,32 @@ input.upload {
 // #       #    # #    # #         #    # #         #   #  #      #    # #    # #      #   #  #    # #    # #
 // #       #    #  ####  ######    #####  ######    #    # ######  ####  #    # ###### #    #  ####  #    # ######
 
+#entete-recherche {
+  width: 72%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#entete-recherche-basse {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
 #pageRecherche ul {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
 
 #pageRecherche ul li {
   width: 45%;
-  margin: 20px 20px 0px 20px;
+  margin: 0px 20px 50px 20px;
 }
 
 #pageRecherche h3 {
@@ -709,11 +744,37 @@ input.upload {
   align-items: flex-end;
   color: white;
   text-shadow: 1px 1px black;
-  margin: 20px 0px;
+  margin: 0px 0px 15px 0px;
 }
 
 #pageRecherche .rating {
   display: flex;
+}
+
+#pageRecherche .formulaire-recherche {
+  width: 75%;
+  margin-bottom: 40px;
+}
+
+#pageRecherche #filtres {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+#pageRecherche #filtres li {
+  margin: 0px;
+  width: auto;
+  display: flex;
+  border: 1px solid black;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+#pageRecherche a {
+  text-decoration: none;
+  color: inherit;
 }
 
 // #######

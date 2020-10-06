@@ -5,11 +5,11 @@ const userSchema = new Schema({
   //profileType: String, //ajouté
   firstName: {
     type: String,
-    required: true
+    required: true,
   },
   lastName: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
@@ -23,15 +23,15 @@ const userSchema = new Schema({
   },
   userName: {
     type: String,
-    required: true
+    required: true,
   },
   profilePic: {
     type: String,
-    default: 'https://res.cloudinary.com/nina3am/image/upload/v1601573838/meet-your-food/PngItem_307416%20%281%29.png.png'
+    default: 'https://res.cloudinary.com/nina3am/image/upload/v1601573838/meet-your-food/PngItem_307416%20%281%29.png.png',
   },
   host: {
     type: Boolean,
-    required: true
+    required: true,
   },
 }, {
   timestamps: true,

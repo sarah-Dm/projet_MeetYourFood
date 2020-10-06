@@ -83,4 +83,7 @@ app.use("/hosts", hosts);
 const edit = require("./routes/edit.route");
 app.use("/edit", edit);
 
+const comment = require('./routes/comment.route');
+app.use('/hosts', comment);
+
 module.exports = app;

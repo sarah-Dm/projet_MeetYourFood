@@ -75,4 +75,7 @@ app.use('/hosts', host);
 const hosts = require('./routes/recherche.route');
 app.use('/hosts', hosts);
 
+const comment = require('./routes/comment.route');
+app.use('/hosts', comment);
+
 module.exports = app;

@@ -97,10 +97,10 @@ const hostSchema = new Schema(
       required: true,
     },
     // A gérer
-    // photos: {
-    //   type: String,
-    //   required: true,
-    // },
+    photos: {
+      type: [String],
+      required: true,
+    },
     maximumVisitors: {
       type: Number,
       min: 1,

@@ -23,23 +23,24 @@
             <label class="field">Website<input type='text' name="website"></label>
             <label class="field">Address *<textarea name="address"></textarea></label>
             <label class="field">Zipcode *<input type='text' name="zipCode"></label>
-            <label class="field">City *<select name="city">
+            <label class="field">City *
+                <select name="city">
                     <option value='bergerac'>Bergerac</option>
                     <option value='compiegne'>Compiègne</option>
                     <option value='clermont-ferrand'>Clermont-Ferrand</option>
-                </select></label>
+                </select>
+                </label>
             <fieldset>
                 <legend>Farm type * </legend>
-                <div class="checkbox"><input type="checkbox" name="farmType" value="poultry farming" id="poultry"><label
+                <div class="checkbox">
+                        <input type="checkbox" name="farmType" value="poultry farming" id="poultry">
+                        <label
                         for="poultry">Poultry
-                        Farming</label></div>
-                <div class="checkbox"><input type="checkbox" name="farmType" value="pig farming" id="pig"><label
-                        for="pig">Pig
                         Farming</label>
                 </div>
-                <div class="checkbox"><input type="checkbox" name="farmType" value="cow farming" id="cow"><label
-                        for="cow">Cow
-                        Farming</label>
+                <div class="checkbox"><input type="checkbox" name="farmType" value="pig farming" id="pig"><label for="pig">Pig Farming</label>
+                </div>
+                <div class="checkbox"><input type="checkbox" name="farmType" value="cow farming" id="cow"><label for="cow">Cow Farming</label>
                 </div>
                 <div class="checkbox"><input type="checkbox" name="farmType" value="sheep farming" id="sheep"><label
                         for="sheep">Sheep
@@ -147,7 +148,7 @@
                         for="german">German</label></div>
 
             </fieldset>
-            <label class="field">Farm photo *<input type="file" name="photos" class="upload" /></label>
+            <label class="field">Farm photo *<input type="file" multiple name="photos" class="upload" /></label>
             {{!-- TODO Gérer la possibilité d'ajouter plusieurs photos sur la fiche host
       
       <input type="file" name="photo-2" />

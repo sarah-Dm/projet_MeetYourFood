@@ -360,6 +360,17 @@ button:focus {
   margin-bottom: 3%;
 }
 
+#host-detail-container #new-reviews {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+#host-detail-container button {
+  align-self: center;
+  width: 20%;
+}
+
 // ######
 // #     # ######  ####  #    # ###### #####   ####  #    # ######
 // #     # #      #    # #    # #      #    # #    # #    # #
@@ -550,6 +561,8 @@ input.upload {
   margin-right: 50px;
   width: 50%;
 }
+
+#review
 
 // #######
 // #       #####  # #####    #    # #  ####  # #####  ####  #####

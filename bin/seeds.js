@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const User = require('../models/User.model.js');
 const Host = require('../models/Host.model.js');
+const Comment = require('../models/Comment.model.js');
 
 const DB_NAME = 'meetyourfood';
 
@@ -312,3 +313,30 @@ User.create(users)
       .catch((err) => console.error(err));
   })
   .catch((err) => console.error(err));
+
+//Commentaires/reviews
+// const comments = [
+//   {
+//     author_id: ,
+//     dest_id: ,
+//     text: 'great experience :) ',
+//     rate: 4,
+//     averageCart: 10,
+//   },
+//   {
+//     author_id: ,
+//     dest_id: ,
+//     text: 'nothing to see :( ',
+//     rate: 1,
+//     averageCart: 10,
+//   },
+// ];
+
+// Comment.create(comments)
+//   .then((comments) => {
+//     console.log(`${comments.length} comments created.`);
+//     mongoose.connection.close();
+//   })
+//   .catch((err) => {
+//     next(err);
+//   });

@@ -6,6 +6,7 @@ document.addEventListener(
   false
 );
 
+//ADAPTATIVE FORM CREATE USER/HOST
 //tout le formulaire est affiché, aller chercher les éléments HTML
 const createAccountForm = document.querySelector('#createAccountForm');
 //aller chercher les éléments html
@@ -18,19 +19,15 @@ const profileSelection = document.querySelector('#profileSelection');
 //option: au début de la partie host est caché
 
 //lié le selected au changement du form
-
 function changeForm(event) {
-
-  console.log('event', event)
-
+  console.log('event', event);
   const value = event.target.value; // "visitor" / "host"
-
   if (value === 'visitor') {
     //si l'option index1 (visiteur) est séléctionnée, supprimer la partie host du questionnaire
     createAccountForm.classList.remove('host');
   } else {
     //si l'option visiteur n'est pas séléctionnée
- createAccountForm.classList.add('host');
+    createAccountForm.classList.add('host');
   }
   console.log('changed');
 }
@@ -38,3 +35,12 @@ function changeForm(event) {
 
 //modifier le formulaire selon l'option séléctionnée (setTimeout pour que s'active une fois que variables liées)
 profileSelection.addEventListener('change', changeForm);
+
+//REVIEW
+
+document
+  .getElementById('create-comment-form')
+  .addEventListener('submit', (event) => {
+    event.preventDefault();
+    console.log('form submit');
+  });

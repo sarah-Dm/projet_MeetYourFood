@@ -43,7 +43,6 @@ router.post(
       } = req.body;
       const profilePic = req.file.path;
       const hashedPassword = bcryptjs.hashSync(password, salt);
-
       User.create({
           host: false,
           firstName,

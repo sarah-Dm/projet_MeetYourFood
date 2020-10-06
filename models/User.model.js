@@ -17,7 +17,10 @@ const userSchema = new Schema({
     required: true,
     unique: true,
   },
-  //hashedPassword: { type: String, required: true },
+  hashedPassword: {
+    type: String,
+    required: true
+  },
   userName: {
     type: String,
     required: true

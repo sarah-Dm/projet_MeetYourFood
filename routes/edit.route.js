@@ -18,26 +18,27 @@ router.get("/:userId", (req, res, next) => {
         });
       } else {
         Host.findOne({
-          userId: req.params.userId,
-        })
+            userId: req.params.userId,
+          })
           .populate("User")
           .then((host) => {
-            console.log("enum", Host.schema.path("farmType").enumValues);
             res.render("host/edit-host", {
               user,
               host,
               farmTypes: host.farmType, // ['']
-              allFarms: [
-                "poultry farming",
-                "pig farming",
-                "cow farming",
-                "sheep farming",
-                "market gardener",
-                "viticulture",
-                "beekeeping",
-                "cheese maker",
-                "dairy maker",
-              ],
+              allFarms: Host.schema.path("farmType").caster.enumValues,
+              farmActivities: host.activitiesType,
+              allActivities: Host.schema.path("activitiesType").caster.enumValues,
+              farmCity: [`${host.city}`],
+              allCities: Host.schema.path("city").enumValues,
+              farmCertifications: host.certifications,
+              allCertifications: Host.schema.path("certifications").caster.enumValues,
+              farmPublics: host.public,
+              allPublics: Host.schema.path("public").caster.enumValues,
+              farmDays: host.openingDays,
+              allDays: Host.schema.path("openingDays").caster.enumValues,
+              farmLanguages: host.spokenLanguages,
+              allLanguages: Host.schema.path("spokenLanguages").caster.enumValues,
             });
           })
           .catch((err) => next(err));
@@ -52,16 +53,22 @@ router.post("/:userId", fileUploader.single("profilePic"), (req, res, next) => {
     .then((user) => {
       console.log(user);
       if (!user.host) {
-        const { firstName, lastName, userName, email, password } = req.body;
-        const hashedPassword = bcryptjs.hashSync(password, salt);
-        //const profilePic = req.file.path;
-        User.findByIdAndUpdate(req.params.userId, {
+        const {
           firstName,
           lastName,
           userName,
           email,
-          hashedPassword,
-        })
+          password
+        } = req.body;
+        const hashedPassword = bcryptjs.hashSync(password, salt);
+        //const profilePic = req.file.path;
+        User.findByIdAndUpdate(req.params.userId, {
+            firstName,
+            lastName,
+            userName,
+            email,
+            hashedPassword,
+          })
           .then((user) => {
             res.render("user/edit-visitor", {
               user,
@@ -102,18 +109,16 @@ router.post("/:userId", fileUploader.single("profilePic"), (req, res, next) => {
         //const profilePic = req.file.path;
         const hashedPassword = bcryptjs.hashSync(password, salt);
         User.findByIdAndUpdate(req.params.userId, {
-          firstName,
-          lastName,
-          userName,
-          email,
-          hashedPassword,
-        })
+            firstName,
+            lastName,
+            userName,
+            email,
+            hashedPassword,
+          })
           .then((user) => {
-            Host.findOneAndUpdate(
-              {
+            Host.findOneAndUpdate({
                 userId: user.id,
-              },
-              {
+              }, {
                 farmName,
                 description,
                 address,
@@ -129,13 +134,26 @@ router.post("/:userId", fileUploader.single("profilePic"), (req, res, next) => {
                 openingHoursEnd,
                 spokenLanguages,
                 maximumVisitors,
-              }
-            )
+              })
               .then((host) => {
                 res.render("host/edit-host", {
                   user,
                   host,
                   validationMessage: "Your account has been updated",
+                  farmTypes: host.farmType, // ['']
+                  allFarms: Host.schema.path("farmType").caster.enumValues,
+                  farmActivities: host.activitiesType,
+                  allActivities: Host.schema.path("activitiesType").caster.enumValues,
+                  farmCity: [`${host.city}`],
+                  allCities: Host.schema.path("city").enumValues,
+                  farmCertifications: host.certifications,
+                  allCertifications: Host.schema.path("certifications").caster.enumValues,
+                  farmPublics: host.public,
+                  allPublics: Host.schema.path("public").caster.enumValues,
+                  farmDays: host.openingDays,
+                  allDays: Host.schema.path("openingDays").caster.enumValues,
+                  farmLanguages: host.spokenLanguages,
+                  allLanguages: Host.schema.path("spokenLanguages").caster.enumValues,
                 });
               })
               .catch((err) => {
@@ -146,8 +164,7 @@ router.post("/:userId", fileUploader.single("profilePic"), (req, res, next) => {
                   });
                 } else if (err.code === 11000) {
                   res.status(500).render("auth/create-account", {
-                    errorMessage:
-                      "Username and email need to be unique. Either username or email is already used.",
+                    errorMessage: "Username and email need to be unique. Either username or email is already used.",
                   });
                 } else {
                   next(err);

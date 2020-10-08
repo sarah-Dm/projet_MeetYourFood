@@ -30,140 +30,55 @@
                                         value="{{host.website}}"></textarea></label>
                         <label class="field">Zipcode *<input type='text' name="zipCode"
                                         value="{{host.zipCode}}"></label>
-                        <label class="field">City *<select name="city">
-                                        <option value='bergerac'>Bergerac</option>
-                                        <option value='compiegne'>Compiègne</option>
-                                        <option value='clermont-ferrand'>Clermont-Ferrand</option>
-                                </select></label>
                         <fieldset>
-                                <legend>Farm type * </legend>
+                                <legend>City * </legend>
+                                {{#each allCities}}
+                                <div class="checkbox"><input type="checkbox" name="city" value="{{this}}" id="{{this}}"
+                                                {{#inArray ../farmCity this}}checked{{/inArray}}><label
+                                                for="{{this}}">{{this}}</label></div>
+                                {{/each}}
+                        </fieldset>
+                        <fieldset>
+                                <legend>Farm type *</legend>
                                 {{#each allFarms}}
                                 <div class="checkbox"><input type="checkbox" name="farmType" value="{{this}}"
                                                 id="{{this}}" {{#inArray ../farmTypes this}}checked{{/inArray}}><label
                                                 for="{{this}}">{{this}}</label></div>
                                 {{/each}}
                         </fieldset>
-                        {{!-- <label>
-                                FarmType :
-                                <select name="author" multiple>
-                                        {{#each host.farmType}}
-                                        <option value="{{this.id}}" {{#if selected}} selected="selected" {{/if}}>
-                                                {{this}}</option>
-                                        {{/each}}
-                        </label> --}}
-                        {{!-- <fieldset>
-                                <legend>Farm type * </legend>
-                                <div class="checkbox"><input type="checkbox" name="farmType" value="poultry"
-                                                id="poultry" {{#each farmType}}{{#if poultry}}
-                                                checked{{/if}}{{/each}}><label for="poultry">Poultry
-                                                Farming</label></div>
-                                <div class="checkbox"><input type="checkbox" name="farmType" value="pig" id="pig"
-                                                {{#each farmObject.name}}{{#if "pig"}} checked{{/if}}{{/each}}><label
-                                                for="pig">Pig
-                                                Farming</label>
-                                </div>
-                                <div class="checkbox"><input type="checkbox" name="farmType" value="cow" id="cow"
-                                                {{#each farmObject.name}}{{#if "cow"}} checked{{/if}}{{/each}}><label
-                                                for="cow">Cow
-                                                Farming</label>
-                                </div>
-                                <div class="checkbox"><input type="checkbox" name="farmType" value="sheep" id="sheep"
-                                                {{#each farmObject.name}}{{#if "sheep"}} checked{{/if}}{{/each}}><label
-                                                for="sheep">Sheep
-                                                Farming</label></div>
-                                <div class="checkbox"><input type="checkbox" name="farmType" value="market" id="market"
-                                                {{#each farmObject.name}}{{#if "market"}} checked{{/if}}{{/each}}><label
-                                                for="market">Market
-                                                gardener</label></div>
-                                <div class="checkbox"><input type="checkbox" name="farmType" value="viticulture"
-                                                id="viticulture" {{#each farmObject}}{{#if "viticulture"}}
-                                                checked{{/if}}{{/each}}><label for="viticulture">Viticulture</label>
-                                </div>
-                                <div class="checkbox"><input type="checkbox" name="farmType" value="beekeeping"
-                                                id="beekeeping" {{#each farmObject}}{{#if beekeeping}}
-                                                checked{{/if}}{{/each}}><label for="beekeeping">Beekeeping</label></div>
-
-                                <div class="checkbox"><input type="checkbox" name="farmType" value="cheese" id="cheese"
-                                                {{#each host.farmType}}{{#if checked}} checked{{/if}}{{/each}}><label
-                                                for="cheese">Cheese
-                                                maker</label></div>
-                                <div class="checkbox"><input type="checkbox" name="farmType" value="dairy" id="dairy"
-                                                {{#each host.farmType}}{{#if checked}} checked{{/if}}{{/each}}><label
-                                                for="dairy">Dairy
-                                                maker</label></div>
-
-                        </fieldset> --}}
                         <fieldset>
                                 <legend>Activities available on the farm * </legend>
-                                <div class="checkbox"><input type="checkbox" name="activitiesType" value="tasting"
-                                                id="tasting"><label for="tasting">Tasting</label></div>
-                                <div class="checkbox"><input type="checkbox" name="activitiesType"
-                                                value="direct-selling" id="direct-selling"><label
-                                                for="direct-selling">Direct
-                                                selling</label></div>
-                                <div class="checkbox"><input type="checkbox" name="activitiesType" value="workshops"
-                                                id="workshops"><label for="workshops">Workshops</label>
-                                </div>
-                                <div class="checkbox"><input type="checkbox" name="activitiesType" value="self-tour"
-                                                id="self-tour"><label for="self-tour">Self
-                                                tour</label>
-                                </div>
-                                <div class="checkbox"><input type="checkbox" name="activitiesType" value="guided-tour"
-                                                id="guided-tour"><label for="guided-tour">Guided
-                                                tour</label></div>
+                                {{#each allActivities}}
+                                <div class="checkbox"><input type="checkbox" name="activitiesType" value="{{this}}"
+                                                id="{{this}}"
+                                                {{#inArray ../farmActivities this}}checked{{/inArray}}><label
+                                                for="{{this}}">{{this}}</label></div>
+                                {{/each}}
                         </fieldset>
-
                         <fieldset>
-                                <legend>Certifications</legend>
-                                <div class="checkbox"><input type="checkbox" name="certifications" value="bio"
-                                                id="bio"><label for="bio">Bio</label>
-                                </div>
-                                <div class="checkbox"><input type="checkbox" name="certifications" value="aop"
-                                                id="aop"><label for="aop">AOP</label>
-                                </div>
-                                <div class="checkbox"><input type="checkbox" name="certifications" value="aoc"
-                                                id="aoc"><label for="aoc">AOC</label>
-                                </div>
-                                <div class="checkbox"><input type="checkbox" name="certifications" value="hve"
-                                                id="hve"><label for="hve">HVE</label>
-                                </div>
-                                <div class="checkbox"><input type="checkbox" name="certifications" value="rse"
-                                                id="rse"><label for="rse">RSE
-                                                Agro</label>
-                                </div>
-                                <div class="checkbox"><input type="checkbox" name="certifications" value="biodynamic"
-                                                id="biodynamic"><label for="biodynamic">Biodynamic</label>
-                                </div>
-
+                                <legend>Certifications </legend>
+                                {{#each allCertifications}}
+                                <div class="checkbox"><input type="checkbox" name="certifications" value="{{this}}"
+                                                id="{{this}}"
+                                                {{#inArray ../farmCertifications this}}checked{{/inArray}}><label
+                                                for="{{this}}">{{this}}</label></div>
+                                {{/each}}
                         </fieldset>
                         <fieldset>
                                 <legend>Public</legend>
-                                <div class="checkbox"><input type="checkbox" name="public" value="children"
-                                                id="children"><label for="children">Children</label></div>
-                                <div class="checkbox"><input type="checkbox" name="public" value="seniors"
-                                                id="seniors"><label for="seniors">Seniors</label>
-                                </div>
-                                <div class="checkbox"><input type="checkbox" name="public" value="disabled"
-                                                id="disabled"><label for="disabled">Disabled
-                                                access</label></div>
-
+                                {{#each allPublics}}
+                                <div class="checkbox"><input type="checkbox" name="public" value="{{this}}"
+                                                id="{{this}}" {{#inArray ../farmPublics this}}checked{{/inArray}}><label
+                                                for="{{this}}">{{this}}</label></div>
+                                {{/each}}
                         </fieldset>
                         <fieldset>
                                 <legend>Opening days *</legend>
-                                <div class="checkbox"><input type="checkbox" name="openingDays" value="monday"
-                                                id="monday"><label for="monday">Monday</label></div>
-                                <div class="checkbox"><input type="checkbox" name="openingDays" value="tuesday"
-                                                id="tuesday"><label for="tuesday">Tuesday</label></div>
-                                <div class="checkbox"><input type="checkbox" name="openingDays" value="wednesday"
-                                                id="wednesday"><label for="wednesday">Wednesday</label></div>
-                                <div class="checkbox"><input type="checkbox" name="openingDays" value="thursday"
-                                                id="thursday"><label for="thursday">Thursday</label></div>
-                                <div class="checkbox"><input type="checkbox" name="openingDays" value="friday"
-                                                id="friday"><label for="friday">Friday</label></div>
-                                <div class="checkbox"><input type="checkbox" name="openingDays" value="saturday"
-                                                id="saturday"><label for="saturday">Saturday</label></div>
-                                <div class="checkbox"><input type="checkbox" name="openingDays" value="sunday"
-                                                id="sunday"><label for="sunday">Sunday</label></div>
+                                {{#each allDays}}
+                                <div class="checkbox"><input type="checkbox" name="openingDays" value="{{this}}"
+                                                id="{{this}}" {{#inArray ../farmDays this}}checked{{/inArray}}><label
+                                                for="{{this}}">{{this}}</label></div>
+                                {{/each}}
                         </fieldset>
                         <label class="field">Opening Hours *
                                 <div id="opening-hours"><input type='time' name="openingHoursStart"
@@ -171,16 +86,13 @@
                                         <input type='time' name="openingHoursEnd" value="{{host.openingHoursEnd}}">
                                 </div></label>
                         <fieldset>
-                                <legend>Spoken languages *</legend>
-                                <div class="checkbox"><input type="checkbox" name="spokenLanguages"
-                                                value="french"><label for="french">French</label></div>
-                                <div class="checkbox"><input type="checkbox" name="spokenLanguages"
-                                                value="english"><label for="english">English</label></div>
-                                <div class="checkbox"><input type="checkbox" name="spokenLanguages"
-                                                value="spanish"><label for="spanish">Spanish</label></div>
-                                <div class="checkbox"><input type="checkbox" name="spokenLanguages"
-                                                value="german"><label for="german">German</label></div>
-
+                                <legend>Spoken Languages *</legend>
+                                {{#each allLanguages}}
+                                <div class="checkbox"><input type="checkbox" name="spokenLanguages" value="{{this}}"
+                                                id="{{this}}"
+                                                {{#inArray ../farmLanguages this}}checked{{/inArray}}><label
+                                                for="{{this}}">{{this}}</label></div>
+                                {{/each}}
                         </fieldset>
 
                         {{!-- <label class="field">Farm photo *

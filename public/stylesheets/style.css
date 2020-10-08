@@ -186,6 +186,29 @@ button:focus {
   font-size: 1.5em;
   font-weight: 200; }
 
+#user-profile {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto; }
+
+#user-profile .profile-pic {
+  margin-bottom: 20px; }
+
+#user-profile .field {
+  display: block; }
+
+#user-profile .field span {
+  font-weight: 400; }
+
+#user-profile #btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; }
+
+#user-profile .btn {
+  width: 40%; }
+
 #host-detail-container {
   padding-top: 50px;
   margin-right: auto;
@@ -434,7 +457,6 @@ input.upload {
   margin-right: 50px;
   width: 50%; }
 
-#review
 #btn {
   display: flex; }
 
@@ -442,6 +464,14 @@ input.upload {
   margin: 3% auto 5% auto;
   width: 30%;
   text-align: center; }
+
+.edit-visitor .btn,
+.edit-host .btn {
+  width: 40%;
+  margin: 5% 30%; }
+
+.edit-host .checkbox legend {
+  margin-top: 10px; }
 
 /* footer sommaire */
 #footer-layout ul {

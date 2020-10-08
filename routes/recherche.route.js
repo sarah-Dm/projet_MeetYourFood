@@ -1,12 +1,12 @@
-const express = require('express');
-const User = require('../models/User.model');
-const Host = require('../models/Host.model');
+const express = require("express");
+const User = require("../models/User.model");
+const Host = require("../models/Host.model");
 const router = express.Router();
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-router.get('/', (req, res, next) => {
+router.get("/", (req, res, next) => {
   let { location, day, visitors } = req.query;
-  console.log('location:', location, 'day:', day, 'visitors:', visitors);
+  console.log("location:", location, "day:", day, "visitors:", visitors);
   if (!visitors) {
     visitors = 1;
   }
@@ -19,9 +19,9 @@ router.get('/', (req, res, next) => {
         { maximumVisitors: { $gte: visitors } },
       ],
     })
-      .populate('userId')
+      .populate("userId")
       .then((resultats) => {
-        res.render('recherche/recherche', { resultats });
+        res.render("recherche/recherche", { resultats });
       })
       .catch((err) => next(err));
     //si le champ day n'est pas précisé
@@ -32,9 +32,9 @@ router.get('/', (req, res, next) => {
         { maximumVisitors: { $gte: visitors } },
       ],
     })
-      .populate('userId')
+      .populate("userId")
       .then((resultats) => {
-        res.render('recherche/recherche', { resultats });
+        res.render("recherche/recherche", { resultats });
       })
       .catch((err) => next(err));
     //si le champ location n'est pas précisé
@@ -42,18 +42,18 @@ router.get('/', (req, res, next) => {
     Host.find({
       $and: [{ openingDays: day }, { maximumVisitors: { $gte: visitors } }],
     })
-      .populate('userId')
+      .populate("userId")
       .then((resultats) => {
-        res.render('recherche/recherche', { resultats });
+        res.render("recherche/recherche", { resultats });
       })
       .catch((err) => next(err));
   } else {
     Host.find({
       maximumVisitors: { $gte: visitors },
     })
-      .populate('userId')
+      .populate("userId")
       .then((resultats) => {
-        res.render('recherche/recherche', { resultats });
+        res.render("recherche/recherche", { resultats });
       })
       .catch((err) => next(err));
   }

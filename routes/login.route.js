@@ -25,7 +25,10 @@ router.post('/login', (req, res, next) => {
   // if (req.session.currentUser) {
   //   res.redirect('/profile/:userId');
   // }
-  const { email, password } = req.body;
+  const {
+    email,
+    password
+  } = req.body;
 
   if (email === '' || password === '') {
     res.render('auth/login', {
@@ -34,8 +37,8 @@ router.post('/login', (req, res, next) => {
     return;
   }
   User.findOne({
-    email,
-  })
+      email,
+    })
     .then((user) => {
       if (!user) {
         res.render('auth/login', {
@@ -44,7 +47,7 @@ router.post('/login', (req, res, next) => {
         return;
       } else if (bcryptjs.compareSync(password, user.hashedPassword)) {
         req.session.currentUser = user;
-        res.render('user/user-profile', {
+        res.render('user/profile', {
           user: req.session.currentUser,
         });
       } else {

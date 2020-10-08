@@ -1,5 +1,5 @@
 <div class="form visitor-profile">
-  <h1>MY PROFILE</h1>
+  <h1>Welcome, {{ user.firstName }} {{ user.lastName }}</h1>
   <div id="user-profile">
     <img class="profile-pic" src="{{user.profilePic}}">
     <p class="field">Firstname : <span>{{user.firstName}}</span></p>
@@ -10,6 +10,6 @@
         <a href="/user/{{user.id}}/delete" class="btn secondary">Delete</a></div>
   </div>
   <form action="/logout" method="POST">
-    <button class="btn" >Logout</button>
+    <button class="btn">Logout</button>
   </form>
 </div>

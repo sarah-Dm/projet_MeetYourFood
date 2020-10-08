@@ -172,8 +172,7 @@ router.post('/:userId', fileUploader.single('profilePic'), (req, res, next) => {
                   });
                 } else if (err.code === 11000) {
                   res.status(500).render('auth/create-account', {
-                    errorMessage:
-                      'Username and email need to be unique. Either username or email is already used.',
+                    errorMessage: 'Username and email need to be unique. Either username or email is already used.',
                   });
                 } else {
                   next(err);

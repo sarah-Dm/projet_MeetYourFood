@@ -12,10 +12,9 @@ const mongoose = require('mongoose');
 router.get('/create-account', (req, res, next) => {
   console.log(
     req.query,
-    req.query ===
-      {
-        host: '1',
-      }
+    req.query === {
+      host: '1',
+    }
   );
 
   res.render('auth/create-account', {
@@ -27,8 +26,7 @@ router.get('/create-account', (req, res, next) => {
 
 router.post(
   '/create-account',
-  fileUploader.fields([
-    {
+  fileUploader.fields([{
       name: 'profilePic',
     },
     {
@@ -37,25 +35,34 @@ router.post(
   ]), //pour gérer plusieurs photos dans différents champs
   (req, res, next) => {
     // console.log(req.files);
-    const { profileType } = req.body;
+    const {
+      profileType
+    } = req.body;
     //option 1) si user est un user simple = visitor
     if (profileType === 'visitor') {
-      const { firstName, lastName, userName, email, password } = req.body;
-      const profilePic = req.files['profilePic'][0].path;
-      const hashedPassword = bcryptjs.hashSync(password, salt);
-      User.create({
-        host: false,
+      const {
         firstName,
         lastName,
         userName,
         email,
-        hashedPassword,
-        profilePic,
-      })
+        password
+      } = req.body;
+      const profilePic = req.files['profilePic'][0].path;
+      const hashedPassword = bcryptjs.hashSync(password, salt);
+      User.create({
+          host: false,
+          firstName,
+          lastName,
+          userName,
+          email,
+          hashedPassword,
+          profilePic,
+        })
         .then((user) => {
           console.log('user', user);
           // req.flash('message creation', "Your account has been created !")
-          res.render(`/profile/${user.id}`); 
+          res.redirect(`/profile/${
+            user.id}`);
         })
         .catch((err) => {
           console.log('error host not created');
@@ -65,8 +72,7 @@ router.post(
             });
           } else if (err.code === 11000) {
             res.status(500).render('auth/create-account', {
-              errorMessage:
-                'Username and email need to be unique. Either username or email is already used.',
+              errorMessage: 'Username and email need to be unique. Either username or email is already used.',
             });
           } else {
             next(err);
@@ -102,40 +108,40 @@ router.post(
       } = req.body;
 
       const hashedPassword = bcryptjs.hashSync(password, salt);
-
       User.create({
-        host: true,
-        firstName,
-        lastName,
-        userName,
-        email,
-        hashedPassword,
-        profilePic,
-      })
+          host: true,
+          firstName,
+          lastName,
+          userName,
+          email,
+          hashedPassword,
+          profilePic,
+        })
         .then((user) => {
           Host.create({
-            userId: user.id,
-            farmName,
-            description,
-            address,
-            zipCode,
-            city,
-            farmType,
-            activitiesType,
-            certifications,
-            public,
-            photos,
-            openingDays,
-            openingHoursStart,
-            openingHoursEnd,
-            spokenLanguages,
-            maximumVisitors,
-          })
+              userId: user.id,
+              farmName,
+              description,
+              address,
+              zipCode,
+              city,
+              farmType,
+              activitiesType,
+              certifications,
+              public,
+              photos,
+              openingDays,
+              openingHoursStart,
+              openingHoursEnd,
+              spokenLanguages,
+              maximumVisitors,
+            })
             .then((host) => {
               //meme si email pas unique, passe dans then()
               console.log('host', host);
               // res.send('Host created !');
-              res.redirect(`/profile/${user.id}`);
+              res.redirect(`/profile/${
+                    user.id}`);
             })
             .catch((err) => {
               console.log('error host not created');
@@ -145,8 +151,7 @@ router.post(
                 });
               } else if (err.code === 11000) {
                 res.status(500).render('auth/create-account', {
-                  errorMessage:
-                    'Username and email need to be unique. Either username or email is already used.',
+                  errorMessage: 'Username and email need to be unique. Either username or email is already used.',
                 });
               } else {
                 next(err);
@@ -161,8 +166,7 @@ router.post(
             });
           } else if (err.code === 11000) {
             res.status(500).render('auth/create-account', {
-              errorMessage:
-                'Username and email need to be unique. Either username or email is already used.',
+              errorMessage: 'Username and email need to be unique. Either username or email is already used.',
             });
           } else {
             next(err);

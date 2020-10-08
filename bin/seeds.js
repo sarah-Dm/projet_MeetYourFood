@@ -6,6 +6,8 @@ const Comment = require('../models/Comment.model.js');
 
 const DB_NAME = 'meetyourfood';
 
+//mongodb+srv://meetyourfood:JXTKTjXQAvia05Tv@cluster0.hhlqe.mongodb.net/test
+//mongodb://localhost/${DB_NAME}
 mongoose
   .connect(`mongodb://localhost/${DB_NAME}`, {
     useCreateIndex: true,
@@ -16,8 +18,7 @@ mongoose
     console.log('Connected to the DB !');
   });
 
-const data = [
-  {
+const data = [{
     userId: {
       firstName: 'Jean-Claude',
       lastName: 'Dupont',
@@ -31,8 +32,7 @@ const data = [
     address: '8, Chemin  des Vignes',
     zipCode: 32189,
     certifications: ['AOP', 'HVE'],
-    description:
-      'Les enfants adorent venir à la ferme car tous leurs sens sont en éveil. Pour la plupart d’entre eux, c’est la première fois qu’ils peuvent voir des animaux si près et les toucher. C’est aussi une manière de découvrir quel est le véritable trésor de la vie, ce que nous donne chaque jour la terre : la nourriture.',
+    description: 'Les enfants adorent venir à la ferme car tous leurs sens sont en éveil. Pour la plupart d’entre eux, c’est la première fois qu’ils peuvent voir des animaux si près et les toucher. C’est aussi une manière de découvrir quel est le véritable trésor de la vie, ce que nous donne chaque jour la terre : la nourriture.',
     openingDays: ['monday', 'thursday', 'sunday'],
     openingHoursStart: '08:00',
     openingHoursEnd: '17:00',
@@ -58,8 +58,7 @@ const data = [
     address: '8, Chemin  des Vignes',
     zipCode: 32189,
     certifications: ['bio', 'biodynamic'],
-    description:
-      'Malgré son nom, le Potager des Princes n’est pas qu’un jardin. C’est aussi un parc animalier et un théâtre pour les enfants comme pour les parents. Une escapade nature près de Paris, au Jardin de Chantilly, pour toute la tribu en quête d’une sortie plein air dépaysante. Des animations spéciales sont également programmées régulièrement',
+    description: 'Malgré son nom, le Potager des Princes n’est pas qu’un jardin. C’est aussi un parc animalier et un théâtre pour les enfants comme pour les parents. Une escapade nature près de Paris, au Jardin de Chantilly, pour toute la tribu en quête d’une sortie plein air dépaysante. Des animations spéciales sont également programmées régulièrement',
     openingDays: ['monday', 'tuesday', 'thursday', 'saturday', 'sunday'],
     openingHoursStart: '08:00',
     openingHoursEnd: '17:00',
@@ -86,8 +85,7 @@ const data = [
     address: '8, Chemin  des Vignes',
     zipCode: 32189,
     certifications: ['AOP', 'AOC'],
-    description:
-      'Spécialistes de l’élevage et de la culture de la terre depuis 1746, les Fermes de Gally sont aujourd’hui une référence en matière de pédagogie agricole à destination des enfants et de la famille. Rendez-vous à Saint-Cyr-l’École ou à Sartrouville dans les Yvelines, à côté de Paris.',
+    description: 'Spécialistes de l’élevage et de la culture de la terre depuis 1746, les Fermes de Gally sont aujourd’hui une référence en matière de pédagogie agricole à destination des enfants et de la famille. Rendez-vous à Saint-Cyr-l’École ou à Sartrouville dans les Yvelines, à côté de Paris.',
     openingDays: ['tuesday', 'wednesday', 'thursday', 'saturday', 'sunday'],
     openingHoursStart: '08:00',
     openingHoursEnd: '17:00',
@@ -115,8 +113,7 @@ const data = [
     address: '8, Chemin  des Vignes',
     zipCode: 32189,
     certifications: ['RSE', 'biodynamic'],
-    description:
-      'Une ferme pédagogique accueille les enfants en plein Paris. Située dans le 13e arrondissement, elle est au sein du Parc Kellermann et propose aux familles des visites au plus près des animaux.',
+    description: 'Une ferme pédagogique accueille les enfants en plein Paris. Située dans le 13e arrondissement, elle est au sein du Parc Kellermann et propose aux familles des visites au plus près des animaux.',
     openingDays: ['thursday', 'friday', 'saturday', 'sunday'],
     openingHoursStart: '08:00',
     openingHoursEnd: '17:00',
@@ -142,8 +139,7 @@ const data = [
     address: '8, Chemin  des Vignes',
     zipCode: 32189,
     certifications: ['RSE', 'biodynamic', 'AOP', 'AOC'],
-    description:
-      "Les Cueillettes de Compans sont situées vers Roissy près de Paris. D'avril à novembre, elles proposent des produits frais variés à venir récolter en famille. L'occasion d'une sortie nature avec les enfants.",
+    description: "Les Cueillettes de Compans sont situées vers Roissy près de Paris. D'avril à novembre, elles proposent des produits frais variés à venir récolter en famille. L'occasion d'une sortie nature avec les enfants.",
     openingDays: ['monday', 'thursday', 'friday', 'saturday', 'sunday'],
     openingHoursStart: '08:00',
     openingHoursEnd: '17:00',
@@ -168,8 +164,7 @@ const data = [
     address: '8, Chemin  des Vignes',
     zipCode: 32189,
     certifications: ['RSE', 'biodynamic', 'AOP', 'AOC'],
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique ipsum non neque condimentum tristique. Pellentesque mollis consequat blandit. Nam leo libero, tempor eu finibus efficitur, aliquam eget lacus. Duis a dolor nec justo vehicula varius feugiat sed nulla. Nulla tempor a mi quis imperdiet. Nulla massa augue, sodales non mauris a, laoreet accumsan nisi. Proin sodales sit amet ipsum eget dictum. Pellentesque ac rhoncus nibh, ut pretium risus. ',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique ipsum non neque condimentum tristique. Pellentesque mollis consequat blandit. Nam leo libero, tempor eu finibus efficitur, aliquam eget lacus. Duis a dolor nec justo vehicula varius feugiat sed nulla. Nulla tempor a mi quis imperdiet. Nulla massa augue, sodales non mauris a, laoreet accumsan nisi. Proin sodales sit amet ipsum eget dictum. Pellentesque ac rhoncus nibh, ut pretium risus. ',
     openingDays: ['monday', 'thursday', 'saturday'],
     openingHoursStart: '08:00',
     openingHoursEnd: '17:00',
@@ -195,8 +190,7 @@ const data = [
     address: '8, Chemin  des Vignes',
     zipCode: 32189,
     certifications: ['biodynamic', 'AOP', 'AOC'],
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique ipsum non neque condimentum tristique. Pellentesque mollis consequat blandit. Nam leo libero, tempor eu finibus efficitur, aliquam eget lacus. Duis a dolor nec justo vehicula varius feugiat sed nulla. Nulla tempor a mi quis imperdiet. Nulla massa augue, sodales non mauris a, laoreet accumsan nisi. Proin sodales sit amet ipsum eget dictum. Pellentesque ac rhoncus nibh, ut pretium risus. ',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique ipsum non neque condimentum tristique. Pellentesque mollis consequat blandit. Nam leo libero, tempor eu finibus efficitur, aliquam eget lacus. Duis a dolor nec justo vehicula varius feugiat sed nulla. Nulla tempor a mi quis imperdiet. Nulla massa augue, sodales non mauris a, laoreet accumsan nisi. Proin sodales sit amet ipsum eget dictum. Pellentesque ac rhoncus nibh, ut pretium risus. ',
     openingDays: ['monday', 'thursday', 'saturday', 'wednesday'],
     openingHoursStart: '08:00',
     openingHoursEnd: '17:00',
@@ -222,8 +216,7 @@ const data = [
     address: '8, Chemin  des Vignes',
     zipCode: 32189,
     certifications: ['biodynamic', 'AOP', 'AOC', 'RSE'],
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique ipsum non neque condimentum tristique. Pellentesque mollis consequat blandit. Nam leo libero, tempor eu finibus efficitur, aliquam eget lacus. Duis a dolor nec justo vehicula varius feugiat sed nulla. Nulla tempor a mi quis imperdiet. Nulla massa augue, sodales non mauris a, laoreet accumsan nisi. Proin sodales sit amet ipsum eget dictum. Pellentesque ac rhoncus nibh, ut pretium risus. ',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique ipsum non neque condimentum tristique. Pellentesque mollis consequat blandit. Nam leo libero, tempor eu finibus efficitur, aliquam eget lacus. Duis a dolor nec justo vehicula varius feugiat sed nulla. Nulla tempor a mi quis imperdiet. Nulla massa augue, sodales non mauris a, laoreet accumsan nisi. Proin sodales sit amet ipsum eget dictum. Pellentesque ac rhoncus nibh, ut pretium risus. ',
     openingDays: ['monday', 'tuesday', 'saturday', 'wednesday'],
     openingHoursStart: '08:00',
     openingHoursEnd: '17:00',
@@ -249,8 +242,7 @@ const data = [
     address: '8, Chemin  des Vignes',
     zipCode: 32189,
     certifications: ['biodynamic', 'AOP', 'AOC', 'RSE'],
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique ipsum non neque condimentum tristique. Pellentesque mollis consequat blandit. Nam leo libero, tempor eu finibus efficitur, aliquam eget lacus. Duis a dolor nec justo vehicula varius feugiat sed nulla. Nulla tempor a mi quis imperdiet. Nulla massa augue, sodales non mauris a, laoreet accumsan nisi. Proin sodales sit amet ipsum eget dictum. Pellentesque ac rhoncus nibh, ut pretium risus. ',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique ipsum non neque condimentum tristique. Pellentesque mollis consequat blandit. Nam leo libero, tempor eu finibus efficitur, aliquam eget lacus. Duis a dolor nec justo vehicula varius feugiat sed nulla. Nulla tempor a mi quis imperdiet. Nulla massa augue, sodales non mauris a, laoreet accumsan nisi. Proin sodales sit amet ipsum eget dictum. Pellentesque ac rhoncus nibh, ut pretium risus. ',
     openingDays: ['monday', 'tuesday', 'saturday', 'wednesday'],
     openingHoursStart: '08:00',
     openingHoursEnd: '17:00',
@@ -276,8 +268,7 @@ const data = [
     address: '8, Chemin  des Vignes',
     zipCode: 32189,
     certifications: ['biodynamic', 'AOP', 'AOC', 'RSE'],
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique ipsum non neque condimentum tristique. Pellentesque mollis consequat blandit. Nam leo libero, tempor eu finibus efficitur, aliquam eget lacus. Duis a dolor nec justo vehicula varius feugiat sed nulla. Nulla tempor a mi quis imperdiet. Nulla massa augue, sodales non mauris a, laoreet accumsan nisi. Proin sodales sit amet ipsum eget dictum. Pellentesque ac rhoncus nibh, ut pretium risus. ',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique ipsum non neque condimentum tristique. Pellentesque mollis consequat blandit. Nam leo libero, tempor eu finibus efficitur, aliquam eget lacus. Duis a dolor nec justo vehicula varius feugiat sed nulla. Nulla tempor a mi quis imperdiet. Nulla massa augue, sodales non mauris a, laoreet accumsan nisi. Proin sodales sit amet ipsum eget dictum. Pellentesque ac rhoncus nibh, ut pretium risus. ',
     openingDays: ['monday', 'tuesday', 'saturday', 'wednesday'],
     openingHoursStart: '08:00',
     openingHoursEnd: '17:00',
@@ -303,8 +294,7 @@ const data = [
     address: '8, Chemin  des Vignes',
     zipCode: 32189,
     certifications: ['biodynamic', 'AOP', 'AOC', 'RSE'],
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique ipsum non neque condimentum tristique. Pellentesque mollis consequat blandit. Nam leo libero, tempor eu finibus efficitur, aliquam eget lacus. Duis a dolor nec justo vehicula varius feugiat sed nulla. Nulla tempor a mi quis imperdiet. Nulla massa augue, sodales non mauris a, laoreet accumsan nisi. Proin sodales sit amet ipsum eget dictum. Pellentesque ac rhoncus nibh, ut pretium risus. ',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique ipsum non neque condimentum tristique. Pellentesque mollis consequat blandit. Nam leo libero, tempor eu finibus efficitur, aliquam eget lacus. Duis a dolor nec justo vehicula varius feugiat sed nulla. Nulla tempor a mi quis imperdiet. Nulla massa augue, sodales non mauris a, laoreet accumsan nisi. Proin sodales sit amet ipsum eget dictum. Pellentesque ac rhoncus nibh, ut pretium risus. ',
     openingDays: ['monday', 'tuesday', 'saturday', 'wednesday'],
     openingHoursStart: '08:00',
     openingHoursEnd: '17:00',

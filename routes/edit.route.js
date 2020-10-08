@@ -147,9 +147,6 @@ router.post('/:userId', fileUploader.single('profilePic'), (req, res, next) => {
                 res.render('host/edit-host', {
                   user,
                   host,
-<<<<<<< HEAD
-                  validationMessage: 'Your account has been updated',
-=======
                   validationMessage: "Your account has been updated",
                   farmTypes: host.farmType, // ['']
                   allFarms: Host.schema.path("farmType").caster.enumValues,
@@ -165,7 +162,6 @@ router.post('/:userId', fileUploader.single('profilePic'), (req, res, next) => {
                   allDays: Host.schema.path("openingDays").caster.enumValues,
                   farmLanguages: host.spokenLanguages,
                   allLanguages: Host.schema.path("spokenLanguages").caster.enumValues,
->>>>>>> 0dfd9cf678dca0c5d5d8623bb624200c45d46e6f
                 });
               })
               .catch((err) => {
@@ -175,14 +171,9 @@ router.post('/:userId', fileUploader.single('profilePic'), (req, res, next) => {
                     errorMessage: err.message,
                   });
                 } else if (err.code === 11000) {
-<<<<<<< HEAD
                   res.status(500).render('auth/create-account', {
                     errorMessage:
                       'Username and email need to be unique. Either username or email is already used.',
-=======
-                  res.status(500).render("auth/create-account", {
-                    errorMessage: "Username and email need to be unique. Either username or email is already used.",
->>>>>>> 0dfd9cf678dca0c5d5d8623bb624200c45d46e6f
                   });
                 } else {
                   next(err);

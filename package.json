@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "start-dev": "nodemon ./bin/www",
     "dev": "DEBUG=meetyourfood:* nodemon ./bin/www",
     "dev-windows": "nodemon ./bin/www",
     "inspect": "nodemon --inspect ./bin/www"

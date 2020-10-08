@@ -96,7 +96,6 @@ const hostSchema = new Schema(
       ],
       required: true,
     },
-    // A gérer
     photos: {
       type: [String],
       required: true,

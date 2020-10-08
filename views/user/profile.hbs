@@ -1,5 +1,6 @@
 <div class="form visitor-profile">
   <h1>MY PROFILE</h1>
+  {{!-- retirer le formulaire --}}
   <form action='/edit/{{user.id}}' method="POST" enctype="multipart/form-data" id="createAccountForm">
     <div id="user-form">
       <label class="field">Firstname *<input type='text' name="firstName" value="{{user.firstName}}" disabled></label>
@@ -9,10 +10,16 @@
       <label class="field">Password *<input type='text' name="password" value="{{user.password}}" disabled></label>
       <label class="field">Profile picture<input type="file" name="profilePic" class="upload" /></label>
     </div>
-    <div id="btn"><button class="btn primary">Edit</button>
-      <a href="/user/{{user.id}}/delete" class="btn secondary">Delete</a></div>
-    <p class="mandatory">* ALL FIELDS ARE MANDATORY</p>
+    <div id="btn">
+      <button class="btn primary">Edit</button>
+      <a href="/user/{{user.id}}/delete" class="btn secondary">Delete</a>
+    </div>
   </form>
+  <form action="/logout" method="POST">
+    <button class="btn" >Logout</button>
+  </form>
+  <p class="mandatory">* ALL FIELDS ARE MANDATORY</p>
+
 
   {{#if errorMessage}}
   <p class="error-message">{{errorMessage}}</p>

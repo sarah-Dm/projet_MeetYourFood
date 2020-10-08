@@ -15,6 +15,7 @@ const hostForm = document.querySelector('#host-form');
 const visitorOption = document.querySelector('#visitor-option');
 const hostOption = document.querySelector('#host-option');
 const profileSelection = document.querySelector('#profileSelection');
+const loginBtn = document.querySelector('#login-btn');
 
 //option: au début de la partie host est caché
 
@@ -38,9 +39,17 @@ profileSelection.addEventListener('change', changeForm);
 
 //REVIEW
 
-document
-  .getElementById('create-comment-form')
-  .addEventListener('submit', (event) => {
-    event.preventDefault();
-    console.log('form submit');
-  });
+// document
+//   .getElementById('create-comment-form')
+//   .addEventListener('submit', (event) => {
+//     event.preventDefault();
+//     console.log('form submit');
+//   });
+
+//changement bouton login quand user logué
+// function changeLoginBtn(logged) {
+//   console.log('event', logged);
+//   loginBtn.innerText = `${user.firstname} ${user.lastname}`;
+// }
+
+// document.addEventListener('click',changeLoginBtn);

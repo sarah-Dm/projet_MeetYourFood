@@ -24,8 +24,6 @@ const data = [
       email: 'jdupont@gmail.com',
       userName: 'jdupont',
       host: true,
-      profilePic:
-        'https://images.unsplash.com/photo-1542275658-fa28c48e8954?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80',
     },
     farmName: 'La ferme de test',
     farmType: ['poultry farming', 'pig farming'],
@@ -41,6 +39,10 @@ const data = [
     spokenLanguages: ['french', 'german'],
     activitiesType: ['guided-tour', 'direct-selling'],
     maximumVisitors: 5,
+    photos: [
+      'https://images.unsplash.com/photo-1542275658-fa28c48e8954?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80',
+      'https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1336&q=80',
+    ],
   },
   {
     userId: {
@@ -49,8 +51,6 @@ const data = [
       email: 'mbernard@gmail.com',
       userName: 'mbernard',
       host: true,
-      profilePic:
-        'https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1336&q=80',
     },
     farmName: 'Le Potager des Princes',
     farmType: ['market gardener', 'beekeeping'],
@@ -66,6 +66,11 @@ const data = [
     spokenLanguages: ['french', 'spanish'],
     activitiesType: ['tasting', 'direct-selling'],
     maximumVisitors: 10,
+    photos: [
+      'https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1336&q=80',
+      'https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80',
+      'https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1336&q=80',
+    ],
   },
   {
     userId: {
@@ -74,8 +79,6 @@ const data = [
       email: 'sdamag@gmail.com',
       userName: 'sdamag',
       host: true,
-      profilePic:
-        'https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80',
     },
     farmName: 'La Ferme de Gally',
     farmType: ['poultry farming', 'viticulture'],
@@ -92,6 +95,11 @@ const data = [
     public: ['children'],
     activitiesType: ['tasting', 'direct-selling', 'workshops'],
     maximumVisitors: 17,
+    photos: [
+      'https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80',
+      'https://images.unsplash.com/photo-1536657464919-892534f60d6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80',
+      'https://images.unsplash.com/photo-1536657464919-892534f60d6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80',
+    ],
   },
   {
     userId: {
@@ -100,8 +108,6 @@ const data = [
       email: 'nquaresma@gmail.com',
       userName: 'nquaresma',
       host: true,
-      profilePic:
-        'https://images.unsplash.com/photo-1536657464919-892534f60d6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80',
     },
     farmName: 'Ferme Kellerman',
     farmType: ['sheep farming', 'cheese maker', 'dairy maker'],
@@ -117,6 +123,10 @@ const data = [
     spokenLanguages: ['french'],
     activitiesType: ['tasting', 'direct-selling', 'workshops', 'self-tour'],
     maximumVisitors: 3,
+    photos: [
+      'https://images.unsplash.com/photo-1536657464919-892534f60d6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80',
+      'https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80',
+    ],
   },
   {
     userId: {
@@ -125,8 +135,6 @@ const data = [
       email: 'lbonavent@gmail.com',
       userName: 'lbonavent',
       host: true,
-      profilePic:
-        'https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80',
     },
     farmName: 'Les cueillets de Compans',
     farmType: ['cow farming', 'cheese maker', 'dairy maker'],
@@ -142,6 +150,9 @@ const data = [
     spokenLanguages: ['french', 'german'],
     activitiesType: ['workshops', 'self-tour'],
     maximumVisitors: 7,
+    photos: [
+      'https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80',
+    ],
   },
   {
     userId: {
@@ -150,8 +161,6 @@ const data = [
       email: 'abernier@gmail.com',
       userName: 'abernier',
       host: true,
-      profilePic:
-        'https://images.unsplash.com/photo-1475260151973-4b51c9c9af2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80',
     },
     farmName: 'Les cueillettes de test',
     farmType: ['cow farming', 'cheese maker', 'dairy maker'],
@@ -167,6 +176,10 @@ const data = [
     spokenLanguages: ['french', 'german', 'spanish'],
     activitiesType: ['workshops', 'self-tour'],
     maximumVisitors: 20,
+    photos: [
+      'https://images.unsplash.com/photo-1475260151973-4b51c9c9af2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80',
+      'https://images.unsplash.com/photo-1486328228599-85db4443971f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80',
+    ],
   },
   {
     userId: {
@@ -175,8 +188,6 @@ const data = [
       email: 'cvanzetta@gmail.com',
       userName: 'cvanzetta',
       host: true,
-      profilePic:
-        'https://images.unsplash.com/photo-1486328228599-85db4443971f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80',
     },
     farmName: 'Les cueillettes des ruches',
     farmType: ['beekeeping'],
@@ -192,6 +203,10 @@ const data = [
     spokenLanguages: ['french', 'spanish'],
     activitiesType: ['workshops', 'self-tour', 'guided-tour'],
     maximumVisitors: 20,
+    photos: [
+      'https://images.unsplash.com/photo-1486328228599-85db4443971f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80',
+      'https://images.unsplash.com/photo-1486328228599-85db4443971f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80',
+    ],
   },
   {
     userId: {
@@ -200,8 +215,6 @@ const data = [
       email: 'clacanal@gmail.com',
       userName: 'clacanal',
       host: true,
-      profilePic:
-        'https://images.unsplash.com/photo-1484759288640-783b22c95d54?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2560&q=80',
     },
     farmName: 'Les plantes en folie',
     farmType: ['market gardener'],
@@ -217,6 +230,10 @@ const data = [
     spokenLanguages: ['french', 'spanish', 'english'],
     activitiesType: ['workshops', 'self-tour', 'guided-tour', 'tasting'],
     maximumVisitors: 11,
+    photos: [
+      'https://images.unsplash.com/photo-1484759288640-783b22c95d54?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2560&q=80',
+      'https://images.unsplash.com/photo-1530844230930-8168b52d2d88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80',
+    ],
   },
   {
     userId: {
@@ -225,8 +242,6 @@ const data = [
       email: 'ecassignol@gmail.com',
       userName: 'ecassignol',
       host: true,
-      profilePic:
-        'https://images.unsplash.com/photo-1530844230930-8168b52d2d88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80',
     },
     farmName: 'Les plantes en folie',
     farmType: ['market gardener'],
@@ -242,6 +257,10 @@ const data = [
     spokenLanguages: ['french', 'spanish', 'english'],
     activitiesType: ['workshops', 'self-tour', 'guided-tour', 'tasting'],
     maximumVisitors: 11,
+    photos: [
+      'https://images.unsplash.com/photo-1530844230930-8168b52d2d88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80',
+      'https://images.unsplash.com/photo-1585499193151-0f50d54c4e1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80',
+    ],
   },
   {
     userId: {
@@ -250,8 +269,6 @@ const data = [
       email: 'cincognito@gmail.com',
       userName: 'cincognito',
       host: true,
-      profilePic:
-        'https://images.unsplash.com/photo-1585499193151-0f50d54c4e1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80',
     },
     farmName: 'Les plantes en folie',
     farmType: ['market gardener'],
@@ -267,6 +284,10 @@ const data = [
     spokenLanguages: ['french', 'spanish', 'english'],
     activitiesType: ['workshops', 'self-tour', 'guided-tour', 'tasting'],
     maximumVisitors: 11,
+    photos: [
+      'https://images.unsplash.com/photo-1585499193151-0f50d54c4e1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80',
+      'https://images.unsplash.com/photo-1569588655434-e5476bfe939e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+    ],
   },
   {
     userId: {
@@ -275,8 +296,6 @@ const data = [
       email: 'eincognito@gmail.com',
       userName: 'eincognito',
       host: true,
-      profilePic:
-        'https://images.unsplash.com/photo-1569588655434-e5476bfe939e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
     },
     farmName: 'Les plantes en folie',
     farmType: ['market gardener'],
@@ -292,6 +311,9 @@ const data = [
     spokenLanguages: ['french', 'spanish', 'english'],
     activitiesType: ['workshops', 'self-tour', 'guided-tour', 'tasting'],
     maximumVisitors: 11,
+    photos: [
+      'https://images.unsplash.com/photo-1569588655434-e5476bfe939e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+    ],
   },
 ];
 
@@ -317,18 +339,30 @@ User.create(users)
 //Commentaires/reviews
 // const comments = [
 //   {
-//     author_id: ,
-//     dest_id: ,
+//     author_id:5f7d7fa610fb25d367ab039c ,
+//     dest_id: 5f7d7fa610fb25d367ab0399 ,
 //     text: 'great experience :) ',
 //     rate: 4,
 //     averageCart: 10,
 //   },
 //   {
-//     author_id: ,
-//     dest_id: ,
+//     author_id: 5f7d7fa610fb25d367ab039b,
+//     dest_id: 5f7d7fa610fb25d367ab0399 ,
 //     text: 'nothing to see :( ',
 //     rate: 1,
-//     averageCart: 10,
+//     averageCart: 3,
+//   },{
+//     author_id:5f7d7fa610fb25d367ab039a ,
+//     dest_id: 5f7d7fa610fb25d367ab039b ,
+//     text: 'Pas d'interet, pas d'accueil',
+//     rate: 1,
+//     averageCart: 20,
+//   },{
+//     author_id: 5f7d7fa610fb25d367ab0399,
+//     dest_id: 5f7d7fa610fb25d367ab039b ,
+//     text: 'Très bon accueil, jolie ferme pédagogique.',
+//     rate: 5,
+//     averageCart: 80,
 //   },
 // ];
 

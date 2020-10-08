@@ -11,14 +11,21 @@ const mongoose = require('mongoose');
 // require('.configs/session.config')(app);
 
 router.get('/login', (req, res, next) => {
-  res.render('auth/login');
+  //si le user est logué, sa page perso s'affiche
+  if (req.session.currentUser) {
+    console.log(req.session.currentUser);
+    res.redirect(`/profile/${req.session.currentUser._id}`);
+    //si le user n'est pas logué, la page de login s'affiche
+  } else {
+    res.render('auth/login');
+  }
 });
 
 router.post('/login', (req, res, next) => {
-  const {
-    email,
-    password
-  } = req.body;
+  // if (req.session.currentUser) {
+  //   res.redirect('/profile/:userId');
+  // }
+  const { email, password } = req.body;
 
   if (email === '' || password === '') {
     res.render('auth/login', {
@@ -27,8 +34,8 @@ router.post('/login', (req, res, next) => {
     return;
   }
   User.findOne({
-      email,
-    })
+    email,
+  })
     .then((user) => {
       if (!user) {
         res.render('auth/login', {
@@ -51,12 +58,28 @@ router.post('/login', (req, res, next) => {
 
 // Route affichage profil visitor  à l'édition ou au clic sur profile
 router.get('/profile/:userId', (req, res, next) => {
-  User.findById(req.params.userId).then(user => {
-    console.log(user)
-    res.render('user/profile', {
-      user
-    })
-  })
-})
+  User.findById(req.params.userId).then((user) => {
+    console.log(user);
+    //si le user n'est pas logué, retour à la page de login/sa page de compte s'il est logué
+    if (!req.session.currentUser) {
+      res.redirect(`/login`);
+      //si le user n'est pas propriétaire de la fiche, retour à la page de login/sa page de compte s'il est logué
+    } else if (req.session.currentUser._id !== user.id) {
+      res.redirect(`/login`);
+    }
+    //si le user est bien la propriétaire de la fiche, la page de profile s'affiche
+    else {
+      res.render('user/profile', {
+        user,
+      });
+    }
+  });
+});
+
+//logout
+router.post('/logout', (req, res, next) => {
+  req.session.destroy();
+  res.redirect('/login');
+});
 
 module.exports = router;

@@ -38,21 +38,23 @@
     <p id="description">{{host.description}}</p>
   </div>
   <div id="new-reviews">
-    <h1>Reviews on {{host.farmName}}</h1>
-    <form action="/hosts/{{user.id}}" method="POST" id="create-comment-form">
-      <label for="">Name 
-        <input name="name" type="text">
-      </label>
-       <label for="">Rate<input name="rate" type="number"></label>
-      <textarea name="review" id="" cols="30" rows="3" placeholder="Type your review over here !">
+    <h1>Leave a review to {{host.farmName}} !</h1>
+    <form class="form" id="review-creation" action="/hosts/{{user.id}}" method="POST" id="create-comment-form">
+        <h3> Visitor name : {{currentUser.firstName}}</h3>
+       <label for="">Rate<input name="rate" type="number">/ 5</label>
+      <textarea name="text" id="" cols="30" rows="3" placeholder="Type your review over here !">
       </textarea>
-      <label for="">Shopping budget<input type="text" name="cart"></label>
-      <button>Post review</button>
+      <label for="">Shopping budget
+        <input type="text" name="averageCart">€
+      </label>
+      <button class="btn">Post review</button>
     </form>
   </div>
   <div id='reviews'>
-    {{#each comment}}
-      {{this}}
+    {{#each comments}}
+      <li>
+        {{> partialComment this}}
+      </li>
     {{/each}}
   </div>
 </div>

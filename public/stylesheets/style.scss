@@ -25,17 +25,17 @@ body {
   padding: 0px;
   font-size: 18px;
   font-family: 'Barlow', sans-serif;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .homepage {
-  background: url('https://res.cloudinary.com/nina3am/image/upload/v1601452001/meet-your-food/466658-PFX5MG-6_m3ynfh.jpg') no-repeat center center fixed;
+  background: url('https://res.cloudinary.com/nina3am/image/upload/v1601452001/meet-your-food/466658-PFX5MG-6_m3ynfh.jpg')
+    no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 100vh;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -367,7 +367,57 @@ button:focus {
 
 #host-detail-container button {
   align-self: center;
+  width: 30%;
+}
+
+#review-creation {
+  margin-left: 0px;
+  width: 100%;
+}
+
+#review-creation input {
+  display: inline;
   width: 20%;
+  background: var(--grey);
+  text-align: right;
+}
+
+#review-creation textarea {
+  background: var(--grey);
+}
+
+#reviews {
+  margin-top: 20px;
+  list-style: none;
+}
+
+#reviews li {
+  border: 1px solid var(--yellow);
+  width: 50%;
+  margin: 3px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+#reviews li div,
+#reviews li p {
+  display: flex;
+  align-items: center;
+  margin: 7px 0px;
+}
+
+#reviews li div p {
+  margin-right: 30px;
+}
+
+#reviews h3 {
+  font-size: 15px;
+}
+
+#reviews img {
+  width: 50px;
+  margin-right: 10px;
 }
 
 // ######
@@ -633,7 +683,6 @@ input.upload {
 }
 
 @media (max-width: 375px) {
-
   #footer-layout #sommaire,
   #footer-layout #bottom_footer {
     padding: 10px 20px;
@@ -651,7 +700,7 @@ input.upload {
     align-items: start;
   }
 
-  #footer-layout #bottom_footer>ul {
+  #footer-layout #bottom_footer > ul {
     display: flex;
     flex-direction: row;
   }

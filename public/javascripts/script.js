@@ -37,15 +37,6 @@ function changeForm(event) {
 //modifier le formulaire selon l'option séléctionnée (setTimeout pour que s'active une fois que variables liées)
 profileSelection.addEventListener('change', changeForm);
 
-//REVIEW
-
-// document
-//   .getElementById('create-comment-form')
-//   .addEventListener('submit', (event) => {
-//     event.preventDefault();
-//     console.log('form submit');
-//   });
-
 //changement bouton login quand user logué
 // function changeLoginBtn(logged) {
 //   console.log('event', logged);
@@ -53,3 +44,8 @@ profileSelection.addEventListener('change', changeForm);
 // }
 
 // document.addEventListener('click',changeLoginBtn);
+
+//quand clique sur login et que url contient "profile"
+// doc.addEventListener('popstate', function () {
+//   loginBtn.innerText = 'Logout';
+// });

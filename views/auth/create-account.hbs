@@ -1,7 +1,7 @@
 <div class="form create-account">
 <h1>CREATE AN ACCOUNT</h1>
-{{!-- {{#if messageCreation}}<p class="error-message">{{messageCreation}}</p>       
-{{/if}} --}}
+{{#if errorMessage}}<p class="error-message">{{errorMessage}}</p>       
+{{/if}}
         <form action='/create-account' method="POST" enctype="multipart/form-data" id="createAccountForm" class="{{#if host}}host{{/if}}">
                 <label class="field">Which profile are you ?
                         <select name="profileType" id="profileSelection">

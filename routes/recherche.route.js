@@ -112,6 +112,7 @@ router.get('/', (req, res, next) => {
       })
       .catch((err) => next(err));
   }
+});
   // if (!visitors) {
   //   visitors = 1;
   // }
@@ -162,7 +163,7 @@ router.get('/', (req, res, next) => {
   //     })
   //     .catch((err) => next(err));
   // }
-});
+
 
 //option : faire une recherche dynamique pour les noms des villes
 

@@ -16,7 +16,7 @@ const visitorOption = document.querySelector('#visitor-option');
 const hostOption = document.querySelector('#host-option');
 const profileSelection = document.querySelector('#profileSelection');
 const loginBtn = document.querySelector('#login-btn');
-const accountLinks = document.querySelector('#account - links');
+const accountLinks = document.querySelector('#account-links');
 
 //lié le selected au changement du form
 function changeForm(event) {

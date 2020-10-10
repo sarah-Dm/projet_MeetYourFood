@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: require('path').resolve(__dirname, '../.env'),
+}); //pour faire le seeds depuis heroku (utiliser la console heroku)
+
 const mongoose = require('mongoose');
 
 const User = require('../models/User.model.js');
@@ -9,7 +13,7 @@ const DB_NAME = 'meetyourfood';
 //mongodb+srv://meetyourfood:JXTKTjXQAvia05Tv@cluster0.hhlqe.mongodb.net/test
 //mongodb://localhost/${DB_NAME}
 mongoose
-  .connect(`mongodb://localhost/${DB_NAME}`, {
+  .connect(process.env.MONGODB_URI, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,

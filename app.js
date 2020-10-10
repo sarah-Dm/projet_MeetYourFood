@@ -16,7 +16,7 @@ module.exports = (req, res, next) => {
 };
 
 mongoose
-  //'mongodb://localhost/meetyourfoode'
+  //'mongodb://localhost/meetyourfood'
   //process.env.MONGODB_URI
 
   .connect(process.env.MONGODB_URI, {

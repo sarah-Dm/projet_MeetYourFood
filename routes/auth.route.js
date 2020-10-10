@@ -107,7 +107,6 @@ router.post(
       } = req.body;
 
       const hashedPassword = bcryptjs.hashSync(password, salt);
-
       User.create({
         host: true,
         firstName,

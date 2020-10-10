@@ -1,8 +1,9 @@
 <div class="form create-account">
-<h1>CREATE AN ACCOUNT</h1>
-{{!-- {{#if messageCreation}}<p class="error-message">{{messageCreation}}</p>       
+        <h1>CREATE AN ACCOUNT</h1>
+        {{!-- {{#if messageCreation}}<p class="error-message">{{messageCreation}}</p>       
 {{/if}} --}}
-        <form action='/create-account' method="POST" enctype="multipart/form-data" id="createAccountForm" class="{{#if host}}host{{/if}}">
+        <form action='/create-account' method="POST" enctype="multipart/form-data" id="createAccountForm"
+                class="{{#if host}}host{{/if}}">
                 <label class="field">Which profile are you ?
                         <select name="profileType" id="profileSelection">
                                 <option value='host' id='host-option' class="profileOptions"
@@ -18,8 +19,10 @@
                         <label class="field">Lastname *<input type='text' name="lastName"></label>
                         <label class="field">Username *<input type='text' name="userName"></label>
                         <label class="field">Email *<input type='email' name="email"></label>
-                        <label class="field">Password *<input type='password' name="password" placeholder="**********"></label>
-                        <label class="field">Profile picture *<input type="file" name="profilePic" class="upload" /></label>
+                        <label class="field">Password *<input type='password' name="password"
+                                        placeholder="**********"></label>
+                        <label class="field">Profile picture *<input type="file" name="profilePic"
+                                        class="upload" /></label>
                 </div>
                 <div id='host-form'>
                         <label class="field">Farm name *<input type='text' name="farmName"></label>
@@ -34,172 +37,176 @@
                                         <option value='clermont-ferrand'>Clermont-Ferrand</option>
                                 </select>
                         </label>
-                <fieldset>
-                        <legend>Farm type * </legend>
-                        <div class="checkbox">
-                                <input type="checkbox" name="farmType" value="poultry farming" id="poultry">
-                                <label for="poultry">Poultry Farming</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="farmType" value="pig farming" id="pig">
-                                <label for="pig">Pig Farming</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="farmType" value="cow farming" id="cow">
-                                <label for="cow">Cow Farming</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="farmType" value="sheep farming" id="sheep">
-                                <label for="sheep">Sheep Farming</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="farmType" value="market gardener" id="market">
-                                <label for="market">Market gardener</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="farmType" value="viticulture" id="viticulture">
-                                <label for="viticulture">Viticulture</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="farmType" value="beekeeping" id="beekeeping">
-                                <label for="beekeeping">Beekeeping</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="farmType" value="cheese maker" id="cheese"><label for="cheese">Cheesemaker</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="farmType" value="dairy maker" id="dairy">
-                                <label for="dairy">Dairy maker</label>
-                        </div>
+                        <fieldset>
+                                <legend>Farm type * </legend>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="farmType" value="poultry-farming" id="poultry">
+                                        <label for="poultry">poultry-farming</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="farmType" value="pig-farming" id="pig">
+                                        <label for="pig">pig-farming</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="farmType" value="cow-farming" id="cow">
+                                        <label for="cow">cow-farming</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="farmType" value="sheep-farming" id="sheep">
+                                        <label for="sheep">sheep-farming</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="farmType" value="market-gardener" id="market">
+                                        <label for="market">market-gardener</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="farmType" value="viticulture" id="viticulture">
+                                        <label for="viticulture">Viticulture</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="farmType" value="beekeeping" id="beekeeping">
+                                        <label for="beekeeping">Beekeeping</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="farmType" value="cheese-maker" id="cheese"><label
+                                                for="cheese">Cheesemaker</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="farmType" value="dairy-maker" id="dairy">
+                                        <label for="dairy">dairy-maker</label>
+                                </div>
 
-                </fieldset>
-                <fieldset>
-                        <legend>Activities available on the farm * </legend>
-                        <div class="checkbox">
-                                <input type="checkbox" name="activitiesType" value="tasting" id="tasting">
-                                <label for="tasting">Tasting</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="activitiesType" value="direct-selling" id="direct-selling">
-                                <label for="direct-selling">Direct selling</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="activitiesType" value="workshops" id="workshops">
-                                <label for="workshops">Workshops</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="activitiesType" value="self-tour" id="self-tour">
-                                <label for="self-tour">Self tour</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="activitiesType" value="guided-tour" id="guided-tour">
-                                <label for="guided-tour">Guided tour</label></div>
-                </fieldset>
+                        </fieldset>
+                        <fieldset>
+                                <legend>Activities available on the farm * </legend>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="activitiesType" value="tasting" id="tasting">
+                                        <label for="tasting">Tasting</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="activitiesType" value="direct-selling"
+                                                id="direct-selling">
+                                        <label for="direct-selling">Direct selling</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="activitiesType" value="workshops" id="workshops">
+                                        <label for="workshops">Workshops</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="activitiesType" value="self-tour" id="self-tour">
+                                        <label for="self-tour">Self tour</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="activitiesType" value="guided-tour"
+                                                id="guided-tour">
+                                        <label for="guided-tour">Guided tour</label></div>
+                        </fieldset>
 
-                <fieldset>
-                        <legend>Certifications</legend>
+                        <fieldset>
+                                <legend>Certifications</legend>
                                 <div class="checkbox">
                                         <input type="checkbox" name="certifications" value="bio" id="bio">
                                         <label for="bio">Bio</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="certifications" value="AOP" id="aop">
-                                <label for="aop">AOP</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="certifications" value="AOC" id="aoc"><label for="aoc">AOC</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="certifications" value="HVE" id="hve">
-                                <label for="hve">HVE</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="certifications" value="RSE" id="rse">
-                                <label for="rse">RSE Agro</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="certifications" value="biodynamic" id="biodynamic">
-                                <label for="biodynamic">Biodynamic</label>
-                        </div>
-
-                </fieldset>
-                <fieldset>
-                        <legend>Public</legend>
-                        <div class="checkbox">
-                                <input type="checkbox" name="public" value="children" id="children">
-                                <label for="children">Children</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="public" value="seniors" id="seniors">
-                                <label for="seniors">Seniors</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="public" value="disabled" id="disabled">
-                                <label for="disabled">Disabled access</label></div>
-                </fieldset>
-                <fieldset>
-                        <legend>Opening days *</legend>
-                        <div class="checkbox">
-                                <input type="checkbox" name="openingDays" value="monday" id="monday">
-                                <label for="monday">Monday</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="openingDays" value="tuesday" id="tuesday">       
-                                <label for="tuesday">Tuesday</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="openingDays" value="wednesday" id="wednesday">
-                                <label for="wednesday">Wednesday</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="openingDays" value="thursday" id="thursday">
-                                <label for="thursday">Thursday</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="openingDays" value="friday" id="friday">
-                                <label for="friday">Friday</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="openingDays" value="saturday" id="saturday">
-                                <label for="saturday">Saturday</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="openingDays" value="sunday" id="sunday">
-                                <label for="sunday">Sunday</label>
-                        </div>
-                </fieldset>
-                        <label class="field">Opening Hours *
-                        <div id="opening-hours">
-                                <input type='time' name="openingHoursStart">
-                                <input type='time' name="openingHoursEnd">
-                        </div></label>
-                <fieldset>
-                        <legend>Spoken languages *</legend>
-                        <div class="checkbox">
-                                <input type="checkbox" name="spokenLanguages" value="french">
-                                <label for="french">French</label></div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="spokenLanguages" value="english">
-                                <label for="english">English</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="spokenLanguages" value="spanish">
-                                <label for="spanish">Spanish</label>
-                        </div>
-                        <div class="checkbox">
-                                <input type="checkbox" name="spokenLanguages" value="german">
-                                <label for="german">German</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="certifications" value="AOP" id="aop">
+                                        <label for="aop">AOP</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="certifications" value="AOC" id="aoc"><label
+                                                for="aoc">AOC</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="certifications" value="HVE" id="hve">
+                                        <label for="hve">HVE</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="certifications" value="RSE" id="rse">
+                                        <label for="rse">RSE Agro</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="certifications" value="biodynamic" id="biodynamic">
+                                        <label for="biodynamic">Biodynamic</label>
                                 </div>
 
-                </fieldset>
-                <label class="field">Farm photo *
-                        <input type="file" name="photos" multiple class="upload" />
-                </label>
+                        </fieldset>
+                        <fieldset>
+                                <legend>Public</legend>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="public" value="children" id="children">
+                                        <label for="children">Children</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="public" value="seniors" id="seniors">
+                                        <label for="seniors">Seniors</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="public" value="disabled" id="disabled">
+                                        <label for="disabled">Disabled access</label></div>
+                        </fieldset>
+                        <fieldset>
+                                <legend>Opening days *</legend>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="openingDays" value="monday" id="monday">
+                                        <label for="monday">Monday</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="openingDays" value="tuesday" id="tuesday">
+                                        <label for="tuesday">Tuesday</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="openingDays" value="wednesday" id="wednesday">
+                                        <label for="wednesday">Wednesday</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="openingDays" value="thursday" id="thursday">
+                                        <label for="thursday">Thursday</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="openingDays" value="friday" id="friday">
+                                        <label for="friday">Friday</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="openingDays" value="saturday" id="saturday">
+                                        <label for="saturday">Saturday</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="openingDays" value="sunday" id="sunday">
+                                        <label for="sunday">Sunday</label>
+                                </div>
+                        </fieldset>
+                        <label class="field">Opening Hours *
+                                <div id="opening-hours">
+                                        <input type='time' name="openingHoursStart">
+                                        <input type='time' name="openingHoursEnd">
+                                </div></label>
+                        <fieldset>
+                                <legend>Spoken languages *</legend>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="spokenLanguages" value="french">
+                                        <label for="french">French</label></div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="spokenLanguages" value="english">
+                                        <label for="english">English</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="spokenLanguages" value="spanish">
+                                        <label for="spanish">Spanish</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input type="checkbox" name="spokenLanguages" value="german">
+                                        <label for="german">German</label>
+                                </div>
+
+                        </fieldset>
+                        <label class="field">Farm photo *
+                                <input type="file" name="photos" multiple class="upload" />
+                        </label>
 
 
-                <label class="field">Maximum visitors *
-                        <input type='text' name="maximumVisitors">
-                </label>
+                        <label class="field">Maximum visitors *
+                                <input type='text' name="maximumVisitors">
+                        </label>
                 </div>
                 <button class="btn primary">Submit</button>
                 <p class="mandatory">* ALL FIELDS ARE MANDATORY</p>

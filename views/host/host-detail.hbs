@@ -25,7 +25,7 @@
         </div>
         <div id="opening">
           <p><span class="label">Opening days :</span> </p>
-          <ul class="capitalize" >{{#each host.openingDays}}<li>{{this}}</li> {{/each}}</ul>
+          <ul class="capitalize">{{#each host.openingDays}}<li>{{this}}</li> {{/each}}</ul>
 
           <p><span class="label">Opening hours :</span> {{host.openingHours}}</p>
         </div>
@@ -38,23 +38,24 @@
     <p id="description">{{host.description}}</p>
   </div>
   <div id="new-reviews">
-    <h1>Leave a review to {{host.farmName}} !</h1>
+    <span class="label">Leave a review to the farm {{host.farmName}} !</span>
+    <span class="label">Visitor name : {{currentUser.firstName}}</span>
     <form class="form" id="review-creation" action="/hosts/{{user.id}}" method="POST" id="create-comment-form">
-        <h3> Visitor name : {{currentUser.firstName}}</h3>
-       <label for="">Rate<input name="rate" type="number">/ 5</label>
-      <textarea name="text" id="" cols="30" rows="3" placeholder="Type your review over here !">
-      </textarea>
-      <label for="">Shopping budget
-        <input type="text" name="averageCart">€
+      <label for="rate" class="field">Rate<p class="review-field"><input name="rate" type="number">/ 5</p></label>
+      <label for="text" class="field">Comment :
+        <textarea name="text" id="" cols="30" rows="3" placeholder="Type your review over here !">
+      </textarea></label>
+      <label for="averageCart" class="field">Shopping budget
+        <p class="review-field"> <input type="text" name="averageCart">€</p>
       </label>
-      <button class="btn">Post review</button>
+      <button class="btn primary">Post review</button>
     </form>
   </div>
   <div id='reviews'>
     {{#each comments}}
-      <li>
-        {{> partialComment this}}
-      </li>
+    <li>
+      {{> partialComment this}}
+    </li>
     {{/each}}
   </div>
 </div>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../stylesheets/style.css" />
 </head>
+
 <body>
   <div class="main-container homepage">
     <header class="header-home">
@@ -40,9 +42,9 @@
           <div id="fields">
             <section class="form-field" id="demande_lieu">
               <label for="">LOCATION</label>
-              <input type="text" placeholder="Where are you ?" name="location">
+              <input type="text" placeholder="Where are you ?" name="location" required>
             </section>
-            <section class="form-field" id="demande_date_arrivee" >
+            <section class="form-field" id="demande_date_arrivee">
               <label>DAY OF YOUR VISIT
                 <select name="day">
                   <option value="">Any</option>
@@ -61,7 +63,7 @@
               <input value="1" type="number" placeholder="1" name="visitors">
             </section>
           </div>
-          <button id="loupe_recherche">            
+          <button id="loupe_recherche">
             <img id="loupe-icon" src="../images/loupe-icon.png" alt="loupe">
           </button>
         </form>
@@ -132,5 +134,3 @@
 
 
 </html>
-
- 

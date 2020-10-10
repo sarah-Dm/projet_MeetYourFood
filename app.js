@@ -19,7 +19,7 @@ mongoose
   //'mongodb://localhost/meetyourfoode'
   //process.env.MONGODB_URI
 
-  .connect('mongodb://localhost/meetyourfood', {
+  .connect(process.env.MONGODB_URI, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,

@@ -1,40 +1,10 @@
 <div id="pageRecherche">
-  <form class="formulaire-recherche" action="/hosts" method="GET">
-    <!--à supprimer quand view mobile avec le .js-->
-    {{!-- <div id="fields">
-      <section class="form-field" id="demande_lieu">
-        <label for="">LOCATION</label>
-        <input value="{{location}}" type="text" placeholder="Where are you ?" name="location">
-      </section>
-      {{!-- to add: prefield with day searched --}}
-      <section class="form-field" id="demande_date_arrivee"> 
-        <label>DAY OF YOUR VISIT
-          {{!-- {{#if day==="monday"}}select="selected"{{/if}} 
-          <select name="day" >
-            <option value="">Any</option>
-            <option value="monday">Monday</option>
-            <option value="tuesday">Tuesday</option>
-            <option value="wednesday">Wednesday</option>
-            <option value="thursday">Thursday</option>
-            <option value="friday">Friday</option>
-            <option value="saturday">Saturday</option>
-            <option value="sunday">Sunday</option>
-          </select>
-        </label>
-      </section>
-      <section class="form-field" id="demande_visiteurs">
-        <label for="">NUMBER OF VISITORS</label>
-        <input value="{{visitors}}" value="1" type="number" placeholder="1" name="visitors">
-      </section>
-    </div>
-    <button id="loupe_recherche">
-      <img id="loupe-icon" src="../images/loupe-icon.png" alt="loupe">
-    </button> --}}
+  <form class="formulaire-recherche resultats" action="/hosts" method="GET">
     <section id="search">
       <div id="fields">
         <section class="form-field" id="demande_lieu">
           <label for="">LOCATION</label>
-          <input  value="{{location}}" type="text" placeholder="Where are you ?" name="location" required>
+          <input value="{{location}}" type="text" placeholder="Where are you ?" name="location" required>
         </section>
         <section class="form-field" id="demande_date_arrivee">
           <label>DAY OF YOUR VISIT
@@ -52,7 +22,7 @@
         </section>
         <section class="form-field" id="demande_visiteurs">
           <label for="">NUMBER OF VISITORS</label>
-          <input  value="{{visitor}}" value="" type="number" placeholder="" name="visitor">
+          <input value="{{visitor}}" value="" type="number" placeholder="" name="visitor">
         </section>
       </div>
       <button id="loupe_recherche">

@@ -923,6 +923,17 @@ input.upload {
   color: inherit;
 }
 
+#pageRecherche {
+padding-top: 6%;
+padding-bottom: 3%;
+}
+
+.resultats {
+  display: flex;
+  flex-direction: column;
+}
+
+
 // #######
 // #       #####  #####   ####  #####   ####
 // #       #    # #    # #    # #    # #

@@ -176,4 +176,14 @@ router.post(
   }
 );
 
+
+// Route traitement delete
+router.get('/user/:userId/delete', (req, res, next) => {
+  User.findByIdAndDelete(req.params.userId).then(user => {
+ res.render('auth/delete-validation', {
+   errorMessage: "Votre profil a bien été supprimé"
+ })
+  }).catch(err => next(err))
+})
+
 module.exports = router;

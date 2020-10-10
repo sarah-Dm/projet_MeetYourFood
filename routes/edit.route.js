@@ -76,7 +76,7 @@ router.post('/:userId', fileUploader.single('profilePic'), (req, res, next) => {
             userName,
             email,
             hashedPassword,
-          })
+          }, {new: true})
           .then((user) => {
             res.render('user/edit-visitor', {
               user,
@@ -122,7 +122,7 @@ router.post('/:userId', fileUploader.single('profilePic'), (req, res, next) => {
             userName,
             email,
             hashedPassword,
-          })
+          }, {new: true})
           .then((user) => {
             Host.findOneAndUpdate({
                 userId: user.id,
@@ -142,7 +142,7 @@ router.post('/:userId', fileUploader.single('profilePic'), (req, res, next) => {
                 openingHoursEnd,
                 spokenLanguages,
                 maximumVisitors,
-              })
+              }, {new: true})
               .then((host) => {
                 res.render('host/edit-host', {
                   user,

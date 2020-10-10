@@ -1,4 +1,5 @@
- {{!-- FORMULAIRE DE RECHERCHE --}}
+    <main class="content homepage">
+{{!-- FORMULAIRE DE RECHERCHE --}}
 {{!-- SLOGAN --}}
 <div class="homepage">
   <section id="page_accueil">
@@ -13,7 +14,7 @@
           <label for="">LOCATION</label>
           <input type="text" placeholder="Where are you ?" name="location" required>
         </section>
-        <section class="form-field" id="demande_date_arrivee" >
+        <section class="form-field" id="demande_date_arrivee">
           <label>DAY OF YOUR VISIT
             <select name="day">
               <option value="">Any</option>
@@ -29,10 +30,10 @@
         </section>
         <section class="form-field" id="demande_visiteurs">
           <label for="">NUMBER OF VISITORS</label>
-          <input value="1" type="number" placeholder="1" name="visitor">
+          <input type="number" name="visitor">
         </section>
       </div>
-      <button id="loupe_recherche">            
+      <button id="loupe_recherche">
         <img id="loupe-icon" src="../images/loupe-icon.png" alt="loupe">
       </button>
     </form>
@@ -47,3 +48,4 @@
     {{!-- A L'AFFICHE --}}
   </section>
 </div>
+</main>

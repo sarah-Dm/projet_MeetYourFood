@@ -1,8 +1,10 @@
+<main class="content">
 <div class="form create-account">
-<h1>CREATE AN ACCOUNT</h1>
-{{#if errorMessage}}<p class="error-message">{{errorMessage}}</p>       
-{{/if}}
-        <form action='/create-account' method="POST" enctype="multipart/form-data" id="createAccountForm" class="{{#if host}}host{{/if}}">
+        <h1>CREATE AN ACCOUNT</h1>
+        {{#if errorMessage}}<p class="error-message">{{errorMessage}}</p>
+        {{/if}}
+        <form action='/create-account' method="POST" enctype="multipart/form-data" id="createAccountForm"
+                class="{{#if host}}host{{/if}}">
                 <label class="field">Which profile are you ?
                         <select name="profileType" id="profileSelection">
                                 <option value='host' id='host-option' class="profileOptions"
@@ -20,8 +22,8 @@
                         <label class="field">Email *<input type='email' name="email"></label>
                         <label class="field">Password *<input type='password' name="password"
                                         placeholder="**********"></label>
-                        <label class="field">Profile picture *<input type="file" name="profilePic"
-                                        class="upload" /></label>
+                        <label class="field">Profile picture *<input type="file" name="profilePic" class="upload"
+                                        required /></label>
                 </div>
                 <div id='host-form'>
                         <label class="field">Farm name *<input type='text' name="farmName"></label>
@@ -175,26 +177,26 @@
                                 </div>
                         </fieldset>
                         <label class="field">Opening Hours *
-                        <div id="opening-hours">
-                                <input type='time' name="openingHoursStart">
-                                <input type='time' name="openingHoursEnd">
-                        </div></label>
-                <fieldset>
-                        <legend>Spoken languages *</legend>
-                        <div class="checkbox">
-                                <input id="french" type="checkbox" name="spokenLanguages" value="french">
-                                <label for="french">French</label></div>
-                        <div class="checkbox">
-                                <input id="english" type="checkbox" name="spokenLanguages" value="english">
-                                <label for="english">English</label>
-                        </div>
-                        <div class="checkbox">
-                                <input id="spanish" type="checkbox" name="spokenLanguages" value="spanish">
-                                <label for="spanish">Spanish</label>
-                        </div>
-                        <div class="checkbox">
-                                <input id="german" type="checkbox" name="spokenLanguages" value="german">
-                                <label for="german">German</label>
+                                <div id="opening-hours">
+                                        <input type='time' name="openingHoursStart">
+                                        <input type='time' name="openingHoursEnd">
+                                </div></label>
+                        <fieldset>
+                                <legend>Spoken languages *</legend>
+                                <div class="checkbox">
+                                        <input id="french" type="checkbox" name="spokenLanguages" value="french">
+                                        <label for="french">French</label></div>
+                                <div class="checkbox">
+                                        <input id="english" type="checkbox" name="spokenLanguages" value="english">
+                                        <label for="english">English</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input id="spanish" type="checkbox" name="spokenLanguages" value="spanish">
+                                        <label for="spanish">Spanish</label>
+                                </div>
+                                <div class="checkbox">
+                                        <input id="german" type="checkbox" name="spokenLanguages" value="german">
+                                        <label for="german">German</label>
                                 </div>
 
                         </fieldset>
@@ -211,3 +213,4 @@
                 <p class="mandatory">* ALL FIELDS ARE MANDATORY</p>
         </form>
 </div>
+</main>

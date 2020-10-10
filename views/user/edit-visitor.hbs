@@ -1,3 +1,4 @@
+<main class="content">
 <div class="form edit-visitor">
   <h1>EDIT MY ACCOUNT</h1>
   {{#if validationMessage}}
@@ -15,11 +16,12 @@
       <label class="field">Email *<input type='email' name="email" value="{{user.email}}"></label>
       <label class="field">Password *<input type='password' name="password" value="{{user.password}}"
           placeholder="**********"></label>
-      <label class="field">Profile picture<input type="file" name="profilePic" class="upload"
-          value={{user.profilePic}} /></label>
+      <label class="field">Profile picture<input type="file" name="profilePic" class="upload" value={{user.profilePic}}
+          required /></label>
     </div>
 
     <button class="btn primary">Save changes</button>
     <p class="mandatory">* ALL FIELDS ARE MANDATORY</p>
   </form>
 </div>
+</main>

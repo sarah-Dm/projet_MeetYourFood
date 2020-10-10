@@ -1,5 +1,6 @@
 <main id="resultat-recherche">
-    <form id="formulaire-recherche-rappel" action=""> <!--à supprimer quand view mobile avec le .js-->
+    <form id="formulaire-recherche-rappel" action="">
+        <!--à supprimer quand view mobile avec le .js-->
         <section class="section_hover" id="lieu_demande">
             <p>lieu</p>
         </section>
@@ -16,17 +17,19 @@
         </section>
     </form>
     {{!-- mobile view--}}
-    <form id="formulaire-recherche-mobile" action=""> <!--à supprimer quand view normale avec le .js-->
+    <form id="formulaire-recherche-mobile" action="">
+        <!--à supprimer quand view normale avec le .js-->
         <img id="loupe-icon-mobile" src="images/loupe-icon.png" alt="loupe">
-        <label for="" ></label>
+        <label for=""></label>
         <input type="text" placeholder="Où allez-vous ?">
-    </form>    
+    </form>
     <section id="liste-de-recherche">
         <h1>Logements [lieu]{{lieu}}</h1>
         <div>
             <hr>
             <div class="annonce">
-                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="photo-lieu">
+                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
+                    alt="photo-lieu">
                 <div id="caractérisiques-synthese">
                     <div>
                         <h3>catégorie et lieu</h3>

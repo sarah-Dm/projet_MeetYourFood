@@ -1,15 +1,17 @@
-<div class="form visitor-profile">
-  <h1>Welcome, {{ user.firstName }} {{ user.lastName }}</h1>
-  <div id="user-profile">
-    <img class="profile-pic" src="{{user.profilePic}}">
-    <p class="field">Firstname : <span>{{user.firstName}}</span></p>
-    <p class="field">Lastname : <span>{{user.lastName}}</span></p>
-    <p class="field">Username : <span>{{user.userName}}</span></p>
-    <p class="field">Email : <span>{{user.email}}</span></p>
-    <div id="btn"><a href="/edit/{{user.id}}" class="btn primary">Edit</button>
-        <a href="/user/{{user.id}}/delete" class="btn primary">Delete</a></div>
+<main class="content">
+  <div class="form visitor-profile">
+    <h1>Welcome, {{ user.firstName }} {{ user.lastName }}</h1>
+    <div id="user-profile">
+      <img class="profile-pic" src="{{user.profilePic}}">
+      <p class="field">Firstname : <span>{{user.firstName}}</span></p>
+      <p class="field">Lastname : <span>{{user.lastName}}</span></p>
+      <p class="field">Username : <span>{{user.userName}}</span></p>
+      <p class="field">Email : <span>{{user.email}}</span></p>
+      <div id="btn"><a href="/edit/{{user.id}}" class="btn primary">Edit</button>
+          <a href="/user/{{user.id}}/delete" class="btn primary">Delete</a></div>
+    </div>
+    <form action="/logout" method="GET" class="logout">
+      <button class="btn">Logout</button>
+    </form>
   </div>
-  <form action="/logout" method="GET" class="logout">
-    <button class="btn">Logout</button>
-  </form>
-</div>
+</main>

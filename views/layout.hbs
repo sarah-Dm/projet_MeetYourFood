@@ -29,21 +29,21 @@
             <a href="/profile/{{currentUser._id}}">
               <i class="far fa-user-circle"></i>
             </a>
-            {{else}} 
+            {{else}}
             <a href="/login">
               <i class="far fa-user-circle"></i>
-            </a> 
-            {{/if}} 
+            </a>
+            {{/if}}
             <div id="account-links">
-              {{#if currentUser }} 
+              {{#if currentUser }}
               <li id="login-btn">
                 <a href="/logout"> Logout</a>
               </li>
-              {{else}}               
+              {{else}}
               <li id="login-btn">
                 <a href="/login">Login</a>
               </li>
-              {{/if}}              
+              {{/if}}
               <li id="create-account">
                 <a href="/create-account">Create an account</a>
               </li>
@@ -53,9 +53,7 @@
       </nav>
     </header>
 
-    <main class="content">
-      {{{body}}}
-    </main>
+    {{{body}}}
 
     <footer id="footer-layout">
       <ul id="sommaire">

@@ -9,6 +9,12 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
 
+//user est accessible parout
+module.exports = (req, res, next) => {
+  res.locals.user = req.session.currentUser;
+  next();
+};
+
 mongoose
   //'mongodb://localhost/meetyourfoode'
   //process.env.MONGODB_URI
@@ -68,6 +74,12 @@ hbs.registerPartials(__dirname + '/views/partials');
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
+
+app.use((req, res, next) => {
+  if (req.session.currentUser) res.locals.currentUser = req.session.currentUser;
+
+  next();
+});
 
 const index = require('./routes/index');
 app.use('/', index);

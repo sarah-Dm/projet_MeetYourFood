@@ -16,8 +16,7 @@ const visitorOption = document.querySelector('#visitor-option');
 const hostOption = document.querySelector('#host-option');
 const profileSelection = document.querySelector('#profileSelection');
 const loginBtn = document.querySelector('#login-btn');
-
-//option: au début de la partie host est caché
+const accountLinks = document.querySelector('#account - links');
 
 //lié le selected au changement du form
 function changeForm(event) {
@@ -32,7 +31,6 @@ function changeForm(event) {
   }
   console.log('changed');
 }
-//vérifier que les champs required fonctionnent en formulaire restreint
 
 //modifier le formulaire selon l'option séléctionnée (setTimeout pour que s'active une fois que variables liées)
 profileSelection.addEventListener('change', changeForm);
@@ -49,3 +47,4 @@ profileSelection.addEventListener('change', changeForm);
 // doc.addEventListener('popstate', function () {
 //   loginBtn.innerText = 'Logout';
 // });
+

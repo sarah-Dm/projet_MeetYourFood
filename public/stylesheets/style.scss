@@ -249,6 +249,11 @@ button:focus {
   font-weight: 200;
 }
 
+// Si la classe du formulaire n'est pas host alors on agit sur l'id = host-form
+.create-account form:not(.host) #host-form {
+  display: none;
+}
+
 // #     #
 // #     #  ####  ###### #####     #####  #####   ####  ###### # #      ######
 // #     # #      #      #    #    #    # #    # #    # #      # #      #

@@ -3,10 +3,7 @@ const router = express.Router();
 
 //routes
 router.get('/', (req, res, next) => {
-  const data = {
-    layout: false,
-  };
-  res.render('home', data);
+  res.render('home');
 });
 
 router.get('/resultats', (req, res, next) => {

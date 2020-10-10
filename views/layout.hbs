@@ -13,6 +13,7 @@
 
 <body>
   <div class="main-container">
+
     <header class="header-layout">
       <h1 id="logo"><a href="/" alt="MeetYourFood">MeetYourFood 🥕</a></h1>
       <nav>
@@ -22,18 +23,38 @@
         </ul>
         <div id="account-block">
           <ul id="mon_compte">
-            <i class="far fa-user-circle"></i>
+            {{#if currentUser }}
+            <a href="/profile/{{currentUser._id}}">
+              <i class="far fa-user-circle"></i>
+            </a>
+            {{else}} 
+            <a href="/login">
+              <i class="far fa-user-circle"></i>
+            </a> 
+            {{/if}} 
             <div id="account-links">
-              <li id="login-btn"><a href="/login">Login</a></li>
-              <li id="create-account"><a href="/create-account">Create an account</a></li>
+              {{#if currentUser }} 
+              <li id="login-btn">
+                <a href="/logout"> Logout</a>
+              </li>
+              {{else}}               
+              <li id="login-btn">
+                <a href="/login">Login</a>
+              </li>
+              {{/if}}              
+              <li id="create-account">
+                <a href="/create-account">Create an account</a>
+              </li>
             </div>
           </ul>
         </div>
       </nav>
     </header>
+
     <main class="content">
       {{{body}}}
     </main>
+
     <footer id="footer-layout">
       <ul id="sommaire">
         <ul>

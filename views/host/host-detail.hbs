@@ -1,64 +1,65 @@
 <main class="content">
-<div id="host-detail-container">
-  <a href="/hosts" class="btn secondary">Back to list</a>
-  <div id="host-block-top">
-    <section id="slider"><img src="{{host.photos}}"></section>
-    {{!-- A FAIRE LES REVIEWS : --}}
-    <aside>
-      <p class="capitalize"><span class="label">CITY :</span> {{host.city}} - {{host.country}}</p>
-      <h1>{{host.farmName}}</h1>
-      <p id="address"><span class="label">ADDRESS :</span>
-      <p>{{host.address}}
-        {{host.zipCode}} - {{host.city}}</p>
-      </p>
-      {{!-- A FAIRE LE AVERAGE CART :--}}
-      <a href="mailto:{{user.email}}" class="btn primary">Contact your host</a>
-    </aside>
-  </div>
-  <div id="host-block-info">
-    <div id="host-main-info">
-      <div id="host-orange-block">
-        <div id="info">
-          <p class="capitalize"><span class="label">Type of farm : </span>{{host.farmType}}</p>
-          <p class="capitalize"><span class="label">Certifications : </span>{{host.certifications}}</p>
-          <p class="capitalize"><span class="label">Type of activities :</span> {{host.activitiesType}}</p>
-          <p class="capitalize"><span class="label">Public : </span>{{host.public}}</p>
-        </div>
-        <div id="opening">
-          <p><span class="label">Opening days :</span> </p>
-          <ul class="capitalize">{{#each host.openingDays}}<li>{{this}}</li> {{/each}}</ul>
-
-          <p><span class="label">Opening hours :</span> {{host.openingHours}}</p>
-        </div>
-      </div>
+  <div id="host-detail-container">
+    <a href="/hosts?location=&day=&visitor=&certification=&activityType=&farmType=&public=&language="
+      class="btn secondary">Back to list</a>
+    <div id="host-block-top">
+      <section id="slider"><img src="{{host.photos}}"></section>
+      {{!-- A FAIRE LES REVIEWS : --}}
       <aside>
-        <img class="profile-pic" src="{{user.profilePic}}">
-        <p><span class="label">HOST : </span>{{user.firstName}} {{user.lastName}}</p>
+        <p class="capitalize"><span class="label">CITY :</span> {{host.city}} - {{host.country}}</p>
+        <h1>{{host.farmName}}</h1>
+        <p id="address"><span class="label">ADDRESS :</span>
+        <p>{{host.address}}
+          {{host.zipCode}} - {{host.city}}</p>
+        </p>
+        {{!-- A FAIRE LE AVERAGE CART :--}}
+        <a href="mailto:{{user.email}}" class="btn primary">Contact your host</a>
       </aside>
     </div>
-    <p id="description">{{host.description}}</p>
-  </div>
-  <div id="new-reviews">
-    <span class="label">Leave a review to the farm {{host.farmName}} !</span>
-    <span class="label">Visitor name : {{currentUser.firstName}}</span>
-    <form class="form" id="review-creation" action="/hosts/{{user.id}}" method="POST" id="create-comment-form">
-      <h3> Visitor name : {{currentUser.firstName}}</h3>
-      <label for="rate" class="field">Rate*<p class="review-field"><input name="rate" type="number" required >/ 5</p></label>
-      <label for="text" class="field">Comment :
-      <textarea name="text" id="" cols="30" rows="3" placeholder="Type your review over here !">
+    <div id="host-block-info">
+      <div id="host-main-info">
+        <div id="host-orange-block">
+          <div id="info">
+            <p class="capitalize"><span class="label">Type of farm : </span>{{host.farmType}}</p>
+            <p class="capitalize"><span class="label">Certifications : </span>{{host.certifications}}</p>
+            <p class="capitalize"><span class="label">Type of activities :</span> {{host.activitiesType}}</p>
+            <p class="capitalize"><span class="label">Public : </span>{{host.public}}</p>
+          </div>
+          <div id="opening">
+            <p><span class="label">Opening days :</span> </p>
+            <ul class="capitalize">{{#each host.openingDays}}<li>{{this}}</li> {{/each}}</ul>
+
+            <p><span class="label">Opening hours :</span> {{host.openingHours}}</p>
+          </div>
+        </div>
+        <aside>
+          <img class="profile-pic" src="{{user.profilePic}}">
+          <p><span class="label">HOST : </span>{{user.firstName}} {{user.lastName}}</p>
+        </aside>
+      </div>
+      <p id="description">{{host.description}}</p>
+    </div>
+    <div id="new-reviews">
+      <span class="label">Leave a review to the farm {{host.farmName}} !</span>
+      <span class="label">Visitor name : {{currentUser.firstName}}</span>
+      <form class="form" id="review-creation" action="/hosts/{{user.id}}" method="POST" id="create-comment-form">
+        <label for="rate" class="field">Rate*<p class="review-field"><input name="rate" type="number" required>/ 5</p>
+        </label>
+        <label for="text" class="field">Comment :
+          <textarea name="text" id="" cols="30" rows="3" placeholder="Type your review over here !">
       </textarea></label>
-      <label for="averageCart" class="field">Shopping budget
-      <p class="review-field"> <input type="text" name="averageCart">€</p>
-      </label>
-      <button class="btn primary">Post review</button>
-    </form>
+        <label for="averageCart" class="field">Shopping budget
+          <p class="review-field"> <input type="text" name="averageCart">€</p>
+        </label>
+        <button class="btn primary">Post review</button>
+      </form>
+    </div>
+    <div id='reviews'>
+      {{#each comments}}
+      <li>
+        {{> partialComment this}}
+      </li>
+      {{/each}}
+    </div>
   </div>
-  <div id='reviews'>
-    {{#each comments}}
-    <li>
-      {{> partialComment this}}
-    </li>
-    {{/each}}
-  </div>
-</div>
 </main>

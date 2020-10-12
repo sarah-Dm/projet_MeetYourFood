@@ -1,27 +1,27 @@
 <main class="content">
-<div class="form edit-visitor">
-  <h1>EDIT MY ACCOUNT</h1>
-  {{#if validationMessage}}
+  <div class="form edit-visitor">
+    <h1>EDIT MY ACCOUNT</h1>
+    {{#if validationMessage}}
 
-  {{#if errorMessage}}
-  <p class="error-message">{{errorMessage}}</p>
-  {{/if}}
-  <p class="validation-message">{{validationMessage}}</p>
-  {{/if}}
-  <form action='/edit/{{user.id}}' method="POST" enctype="multipart/form-data" id="createAccountForm">
-    <div id="user-form">
-      <label class="field">Firstname *<input type='text' name="firstName" value="{{user.firstName}}"></label>
-      <label class="field">Lastname *<input type='text' name="lastName" value="{{user.lastName}}"></label>
-      <label class="field">Username *<input type='text' name="userName" value="{{user.userName}}"></label>
-      <label class="field">Email *<input type='email' name="email" value="{{user.email}}"></label>
-      <label class="field">Password *<input type='password' name="password" value="{{user.password}}"
-          placeholder="**********"></label>
-      <label class="field">Profile picture<input type="file" name="profilePic" class="upload" value={{user.profilePic}}
-          required /></label>
-    </div>
+    {{#if errorMessage}}
+    <p class="error-message">{{errorMessage}}</p>
+    {{/if}}
+    <p class="validation-message">{{validationMessage}}</p>
+    {{/if}}
+    <form action='/edit/{{user.id}}' method="POST" enctype="multipart/form-data" id="createAccountForm">
+      <div id="user-form">
+        <label class="field">Firstname *<input type='text' name="firstName" value="{{user.firstName}}" required></label>
+        <label class="field">Lastname *<input type='text' name="lastName" value="{{user.lastName}}" required></label>
+        <label class="field">Username *<input type='text' name="userName" value="{{user.userName}}" required></label>
+        <label class="field">Email *<input type='email' name="email" value="{{user.email}}" required></label>
+        <label class="field">Password *<input type='password' name="password" value="{{user.password}}"
+            placeholder="**********" required></label>
+        <label class="field">Profile picture<input type="file" name="profilePic" class="upload"
+            value={{user.profilePic}} required /></label>
+      </div>
 
-    <button class="btn primary">Save changes</button>
-    <p class="mandatory">* ALL FIELDS ARE MANDATORY</p>
-  </form>
-</div>
+      <button class="btn primary">Save changes</button>
+      <p class="mandatory">* ALL FIELDS ARE MANDATORY</p>
+    </form>
+  </div>
 </main>

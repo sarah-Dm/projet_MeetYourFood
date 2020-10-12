@@ -226,7 +226,7 @@ min-height:80vh;
 // #     #  ####  #    # ###### #      #    #  ####  ######
 
 #page_accueil {
-padding-top:150px;
+padding-top:15%;
 }
 
 #slogan {
@@ -309,7 +309,7 @@ padding-top:150px;
 // #     #  ####   ####    #      #####  ######   #   #    # # ######
 
 #host-detail-container {
-  padding-top: 50px;
+  padding-top: 10%;
   margin-right: auto;
   margin-left: auto;
   width: 80%;
@@ -335,7 +335,7 @@ padding-top:150px;
 
 #host-block-top {
   display: flex;
-  margin-top: 3%;
+  margin-top: 5%;
 }
 
 #slider {
@@ -345,6 +345,8 @@ padding-top:150px;
 #slider img {
   width: 100%;
   border-radius: 50px;
+  height:80%;
+object-fit: cover;
 }
 
 #host-block-top aside {
@@ -368,7 +370,7 @@ padding-top:150px;
 #host-block-info {
   display: flex;
   flex-direction: column;
-  margin-top: 3%;
+  margin-top: -5%;
 }
 
 #host-main-info {
@@ -433,6 +435,7 @@ padding-top:150px;
 #review-creation {
   margin-left: 0px;
   width: 100%;
+  padding-top: 4%;
 }
 
 #review-creation .primary {
@@ -456,33 +459,46 @@ padding-top:150px;
 }
 
 #reviews li {
-  border: 1px solid var(--yellow);
-  width: 50%;
-  margin: 3px;
+  // border: 1px solid var(--yellow);
+  width: 100%;
+  margin: 3% auto;
+  display: flex;
+  padding: 30px;
+  background: var(--grey);
+  border-radius: 50px;
+}
+
+.author-comment {
+  margin:2%;
   display: flex;
   flex-direction: column;
-  padding-left: 10px;
 }
 
-#reviews li div,
-#reviews li p {
-  display: flex;
-  align-items: center;
-  margin: 7px 0px;
+.review-info {
+  margin: 3% 10%;
 }
 
-#reviews li div p {
-  margin-right: 30px;
-}
+// #reviews li div p {
+//   margin-right: 30px;
+//   text-transform: uppercase;
+
+// }
 
 #new-reviews .label,
 #reviews .label {
   font-size: 20px;
 }
 
-#reviews img {
-  width: 50px;
-  margin-right: 10px;
+.author-comment .profile-pic {
+  margin-bottom: 15%;
+}
+
+.author-comment p {
+  text-align: center;
+}
+
+.author-comment p span {
+  font-weight: 700;
 }
 
 // ######
@@ -948,6 +964,7 @@ padding-bottom: 3%;
   padding: 20px;
   color: white;
   font-weight: 400;
+  margin-bottom: 40px;
 }
 
 .validation-message {

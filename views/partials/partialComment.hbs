@@ -1,10 +1,10 @@
-
-<div>
-   <img src="{{this.author_id.profilePic}}" alt="author_pic">
-  <h3>Reviewed by: {{this.author_id.firstName}}</h3>
+<div class="author-comment">
+  <img class="profile-pic" src="{{this.author_id.profilePic}}" alt="author_pic">
+  <p>Reviewed by: </br>
+    <span class="label">{{this.author_id.firstName}}</span></p>
 </div>
-<p>Review: {{this.text}}</p>
-<div>
-  <p>Rate: {{this.rate}}</p>
-  <p>Shopping budget: {{this.averageCart}}€</p>
+<div class="review-info">
+  <p>Review: <span class="label">{{this.text}}</span></p>
+  <p>Rate: <span class="label">{{this.rate}}</span></p>
+  <p>Shopping budget:<span class="label"> {{this.averageCart}}€</span></p>
 </div>

@@ -2,7 +2,10 @@
 🍽 Website to help land workers share their job and promote local and handmade activities and goods. Any one who has an account can get informed about a nearby farm and book a visit to the farm.
 
 ## Tools used: 
-React framework ---MongoDB ---Cloudinary ---Deployed on Heroku with Atlas for DB
+React framework  
+MongoDB  
+Cloudinary  
+Deployed on Heroku with Atlas for DB
 
 ### 🔧 Installation 
 SESS_SECRET = [you secret phrase for session]  

@@ -5,10 +5,10 @@
 React framework ---MongoDB ---Cloudinary ---Deployed on Heroku with Atlas for DB
 
 ### 🔧 Installation 
-SESS_SECRET = [you secret phrase for session]
-MONGODB_URI=[local Mongo db link]
-MONGODB_URI2=[online Mongo db link]
-//for Cloudinary 
-cloudName = [see on Cloudinary accout] 
-cloudKey = [see on Cloudinary accout] 
-cloudSecret = [see on Cloudinary accout]
+SESS_SECRET = [you secret phrase for session]  
+MONGODB_URI=[local Mongo db link]  
+MONGODB_URI2=[online Mongo db link]  
+//for Cloudinary   
+cloudName = [see on Cloudinary accout]   
+cloudKey = [see on Cloudinary accout]   
+cloudSecret = [see on Cloudinary accout]  

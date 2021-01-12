@@ -7,7 +7,7 @@ MongoDB
 Cloudinary  
 Deployed on Heroku with Atlas for DB
 
-### 🔧 Installation 
+### 🔧Installation: 
 SESS_SECRET = [you secret phrase for session]  
 MONGODB_URI=[local Mongo db link]  
 MONGODB_URI2=[online Mongo db link]  
